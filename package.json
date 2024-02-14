@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "tw-build": "tailwindcss build -i css/style.css -o css/output.css",
+    "tw-watch": "tailwindcss -i css/style.css -o css/output.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}

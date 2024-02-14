@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Grid of images</title>
+        <link href="../css/output.css" rel="stylesheet" />
+        <!-- убрать отображение 1 банера на маленьком устройстве, использовать второй -->
+    </head>
+    <body class="">
+        <section class="lg:grid lg:grid-cols-3 lg:gap-4 p-4 md:p-16 ">
+            <!-- Fist picture-->
+            <div class="flex col-span-3 lg:flex-nowrap md:col-span-2 px-5 bg-slate-100 rounded-3xl items-center hover:shadow-lg shadow-black">
+                <!-- Button left -->
+                <button class="order-1 text-saldo fill-none hover:fill-saldo hover:text-white w-1/6">
+                    <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 stroke-current">
+                        <path d="M23.4375 3.75H6.5625C5.0092 3.75 3.75 5.0092 3.75 6.5625V23.4375C3.75 24.9908 5.0092 26.25 6.5625 26.25H23.4375C24.9908 26.25 26.25 24.9908 26.25 23.4375V6.5625C26.25 5.0092 24.9908 3.75 23.4375 3.75Z" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="M17.3438 20.625L11.7188 15L17.3438 9.375" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <!--  image + text -->
+                <div class="order-2 inline-flex justify-around items-center py-10 p-4 md:p-0 ">
+                    <!-- text -->
+                    <div class="z-10">
+                        <h1 class="inline-block text-black text-2xl md:text-5xl lg:text-6xl font-bold py-2 ">
+                            Банер <span class="text-saldo">первый</span>
+                        </h1>
+                        <h4 class="text-sm md:text-lg">с текущей акцией</h4>
+                    </div>
+                    <!-- image -->
+                    <img class="w-2/5 rotate-12" src="../img/helicopter.png">
+                </div>
+                <!-- Button right -->
+                <button class="order-3 text-saldo fill-none hover:fill-saldo hover:text-white rotate-180 w-1/6">
+                    <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 stroke-current">
+                        <path d="M23.4375 3.75H6.5625C5.0092 3.75 3.75 5.0092 3.75 6.5625V23.4375C3.75 24.9908 5.0092 26.25 6.5625 26.25H23.4375C24.9908 26.25 26.25 24.9908 26.25 23.4375V6.5625C26.25 5.0092 24.9908 3.75 23.4375 3.75Z" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="M17.3438 20.625L11.7188 15L17.3438 9.375" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+                <!-- Second picture-->
+            <div class="hidden lg:flex items-center px-5 bg-slate-100 rounded-3xl hover:shadow-lg shadow-black relative">
+                <!-- text (idk this figma template so wierd) Just change it pls-->
+                <div class="inline-block justify-start whitespace-nowrap absolute top-0 left-0 p-4 pl-5">
+                    <h1 class="text-black md:text-3xl lg:text-4xl font-bold inline-block">
+                        Банер <span class="text-saldo">первый</span>
+                    </h1>
+                    <h4>с текущей акцией</h4>
+                </div>
+                <!-- Button left -->
+                <button class="order-1 text-saldo fill-none hover:fill-saldo hover:text-white ">
+                    <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 stroke-current">
+                        <path d="M23.4375 3.75H6.5625C5.0092 3.75 3.75 5.0092 3.75 6.5625V23.4375C3.75 24.9908 5.0092 26.25 6.5625 26.25H23.4375C24.9908 26.25 26.25 24.9908 26.25 23.4375V6.5625C26.25 5.0092 24.9908 3.75 23.4375 3.75Z" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="M17.3438 20.625L11.7188 15L17.3438 9.375" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <!-- image -->
+                <div class="flex py-20 px-5 justify-end order-2 ">
+                    <img class="w-4/6 -mb-20 rotate-12" src="../img/helicopter.png">
+                </div>
+                <!-- Button right -->
+                <button class="order-3 text-saldo fill-none hover:fill-saldo hover:text-white rotate-180">
+                    <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 stroke-current">
+                        <path d="M23.4375 3.75H6.5625C5.0092 3.75 3.75 5.0092 3.75 6.5625V23.4375C3.75 24.9908 5.0092 26.25 6.5625 26.25H23.4375C24.9908 26.25 26.25 24.9908 26.25 23.4375V6.5625C26.25 5.0092 24.9908 3.75 23.4375 3.75Z" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="M17.3438 20.625L11.7188 15L17.3438 9.375" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </section>
+    </body>
+</html>
