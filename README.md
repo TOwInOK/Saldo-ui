@@ -6,3 +6,7 @@
   - vite
   - pug
   - tailwindcss
+
+# any trash files?
+  - output.css
+  - html folder
