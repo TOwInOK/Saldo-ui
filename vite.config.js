@@ -11,9 +11,11 @@ const locals = {}
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vitePugPlugin({ pugLocals: locals })],
+  plugins: [vitePugPlugin({option, locals})],
   base: "./",
   build: {
+    brotliSize: false,
+    minify: false,
     rollupOptions: {
       input: {
         main: "./index.html",
