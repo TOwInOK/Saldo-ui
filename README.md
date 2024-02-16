@@ -1,9 +1,8 @@
-# How to run tailwind?
-* commands:
-    - for build
-        - tw-build
-    - for watch
-        - tw-watch
+# How to run?
+  - need node.js ;)
+  - npm run dev (or same if you use bun, yarn...)
 
-* how to use with npm
-    - npm run *command*
+# Used
+  - vite
+  - pug
+  - tailwindcss
