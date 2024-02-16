@@ -1,0 +1,44 @@
+//- add all mixins
+include mod
+
+- const menu = ['Акции','Доставка','Возрат','Вакансии','Для бизнеса','Вакансии']
+
+//- lg header
+header(
+    class="lg:px-16 bg-saldo text-white")
+    nav(
+        class="hidden lg:flex items-center justify-between h-14 gap-5")
+        ul(
+            class="inline-flex items-center gap-x-4 *no-underline hover:*:underline")
+            each el in menu
+                li(href='#') #{el}
+
+        ul(class="inline-flex items-center gap-4 *no-underline hover:*:underline")
+            li
+                +address("Нижняя Салда ул. Ломоносова 10", "https://yandex.ru/maps/20687/nizhnyaya-salda/house/ulitsa_lomonosova_10/YkkYcA5lTEAEQFtifXx2dXVlbQ==/?ll=60.695552%2C58.074969&z=17")
+            li
+                +phone("9097054703")
+            li
+                +phone("9630313971")
+            li
+                +telegram("9630313971")
+            li
+                +whatsapp("9630313971")
+
+
+
+//- sm header
+header(
+    class="lg:px-16 bg-saldo text-white")
+    nav(
+        class="lg:hidden items-center py-2 md:py-4")
+        ul(
+            class="flex items-center justify-around") 
+            li
+                +hamburger("white")
+            li(class="min-w-2.5 mb-1")
+                +logo_mobile()
+            +mobile_addition_buttons()
+
+//other staff
+include header_main.pug
