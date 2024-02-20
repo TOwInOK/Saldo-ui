@@ -1,0 +1,56 @@
+
+
+mixin buy_card_start()
+    //main input
+    div(class="flex-shrink-0 lg:flex-shrink lg:inline-block bg-white rounded-2xl overflow-hidden snap-start scroll-ms-auto lg:size-1/5")
+        +buy_card_image_text
+
+mixin buy_card()
+    //main input
+    div(class="flex-shrink-0 lg:flex-shrink lg:inline-block bg-white rounded-2xl overflow-hidden snap-center scroll-ms-auto lg:size-1/5")
+        +buy_card_image_text
+
+mixin buy_card_end()
+    //main input
+    div(class="flex-shrink-0 lg:flex-shrink lg:inline-block bg-white rounded-2xl overflow-hidden snap-end scroll-ms-auto lg:size-1/5")
+        +buy_card_image_text
+
+
+
+
+mixin buy_card_text()
+    div(class="text-slate-800 text-xl font-bold font-['Circe'] leading-normal")
+        |хеликоптер
+
+mixin buy_card_under_text()
+    div(class="text-slate-800 text-base font-normal font-['Circe'] leading-snug line-clamp-2")
+        |Скорость, 300 км в час,
+        |мощь и сила в руках его
+        |что-то ещё про силу вертолёта
+
+
+mixin money()
+    div(class="justify-start items-start gap-4 inline-flex")
+        div(class="text-saldo text-xl font-bold font-['Circe'] leading-normal")
+            |999 ₽
+        div(class="font-thin text-slate-400 leading-snug line-through")
+            |999 999 ₽
+
+mixin buy_card_image()
+    img(src="helicopter.png", alt="helicopter", class="h-44 w-36 lg:size-1/2 lg:object-scale-down lg:object-center p-4 lg:p-0")
+
+mixin buy_card_image_text()
+    div(class="inline-flex flex-col w-full p-4 space-y-2 px-4 items-center lg:items-stretch")
+        div(class="w-full inline-flex justify-around")
+            +buy_card_image()
+        div(class="flex flex-col items-start gap-2 whitespace-pre-wrap")
+            +buy_card_text()
+            +buy_card_under_text()
+            div(class="inline-flex items-start")
+                +money()
+            div(class="flex items-center justify-between w-full")
+                div(class="flex")
+                    +button_card()
+                div(class="flex space-x-4")
+                    +button_compare
+                    +button_heart

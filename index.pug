@@ -1,1 +1,6 @@
-include src/header.pug
+include src/header/header
+main(class="flex flex-col h-dvh p-4 lg:p-0 lg:px-16 justify-between gap-6 bg-neutral-100")
+    include src/header/header_main
+    include src/main/banners
+    include src/main/sections/cards_section
+    include src/main/sections/buy_cards_section
