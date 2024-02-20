@@ -1,26 +1,26 @@
 
 
-mixin buy_card_start()
+mixin buy_card_start(enabler)
     //main input
     div(class="flex-shrink-0 lg:flex-shrink lg:inline-block bg-white rounded-2xl overflow-hidden snap-start scroll-ms-auto lg:size-1/5")
-        +buy_card_image_text
+        +buy_card_image_text(enabler)
 
-mixin buy_card()
+mixin buy_card(enabler)
     //main input
     div(class="flex-shrink-0 lg:flex-shrink lg:inline-block bg-white rounded-2xl overflow-hidden snap-center scroll-ms-auto lg:size-1/5")
-        +buy_card_image_text
+        +buy_card_image_text(enabler)
 
-mixin buy_card_end()
+mixin buy_card_end(enabler)
     //main input
     div(class="flex-shrink-0 lg:flex-shrink lg:inline-block bg-white rounded-2xl overflow-hidden snap-end scroll-ms-auto lg:size-1/5")
-        +buy_card_image_text
+        +buy_card_image_text(enabler)
 
 
 
 
 mixin buy_card_text()
     div(class="text-slate-800 text-xl font-bold font-['Circe'] leading-normal")
-        |хеликоптер
+        |Хеликоптер
 
 mixin buy_card_under_text()
     div(class="text-slate-800 text-base font-normal font-['Circe'] leading-snug line-clamp-2")
@@ -36,17 +36,26 @@ mixin money()
         div(class="font-thin text-slate-400 leading-snug line-through")
             |999 999 ₽
 
-mixin buy_card_image()
-    img(src="helicopter.png", alt="helicopter", class="h-44 w-36 lg:size-1/2 lg:object-scale-down lg:object-center p-4 lg:p-0")
-
-mixin buy_card_image_text()
-    div(class="inline-flex flex-col w-full p-4 space-y-2 px-4 items-center lg:items-stretch")
+mixin buy_card_image(enabler)
+    div(class="relative")
+        img(src="helicopter.png", alt="helicopter", class="h-44 w-36lg:object-scale-down lg:object-center lg:p-0 ")
+        if (enabler === true)
+            div(class="absolute bottom-0 left-0 -ml-8 lg:-ml-5 flex flex-col gap-2")
+                div(class="bg-red-400 rounded-md text-white font-['Circe'] font-medium text-sm px-2 py-1 leading-tight text-center")
+                    |Новинка
+                div(class="bg-green-400 rounded-md text-white font-['Circe'] font-thin text-sm px-2 py-1 leading-tight text-center w-3/4")
+                    |-99%
+        else
+            div(class="absolute bottom-0 left-0 -ml-8 lg:-ml-5 flex flex-col gap-2")
+mixin buy_card_image_text(enabler)
+    div(class="inline-flex flex-col w-full p-4 space-y-6 px-4 items-center lg:items-stretch")
         div(class="w-full inline-flex justify-around")
-            +buy_card_image()
+            +buy_card_image(enabler)
         div(class="flex flex-col items-start gap-2 whitespace-pre-wrap")
-            +buy_card_text()
-            +buy_card_under_text()
-            div(class="inline-flex items-start")
+            div(class="mb-8")
+                +buy_card_text()
+                +buy_card_under_text()
+            div(class="inline-flex items-start mb-2")
                 +money()
             div(class="flex items-center justify-between w-full")
                 div(class="flex")

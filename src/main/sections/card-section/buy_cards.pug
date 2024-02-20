@@ -2,6 +2,7 @@ include ../../../mod
 
 div(class="flex space-x-4 overflow-x-scroll no-scrollbar scroll-smooth w-full snap-x drop-shadow-lg" dir="ltr")
     +buy_card_start()
-    for i in [1,2,3]
-        +buy_card()
+    for i in [1,2]
+        +buy_card(true)
+    +buy_card()
     +buy_card_end()
