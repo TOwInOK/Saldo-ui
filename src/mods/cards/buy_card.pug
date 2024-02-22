@@ -30,7 +30,7 @@ mixin buy_card_under_text()
 
 
 mixin money()
-    div(class="justify-start items-start gap-4 inline-flex")
+    div(class="justify-start items-start gap-4 lg:gap-2 xl:gap-4 inline-flex")
         div(class="text-saldo text-xl font-bold font-['Circe'] leading-normal")
             |999 ₽
         div(class="font-thin text-slate-400 leading-snug line-through")
@@ -38,28 +38,28 @@ mixin money()
 
 mixin buy_card_image(enabler)
     div(class="relative")
-        img(src="helicopter.png", alt="helicopter", class="h-44 w-36 lg:size-auto lg:p-4  lg:object-scale-down lg:object-center  ")
+        img(src="helicopter.png", alt="helicopter", class="h-44 w-36 lg:size-auto lg:p-2 xl:p-4 lg:object-scale-down lg:object-center  ")
         if (enabler === true)
-            div(class="absolute bottom-0 left-0 -ml-8 lg:-ml-0 flex flex-col gap-2")
-                div(class="bg-red-400 rounded-md text-white font-['Circe'] font-medium text-sm px-2 py-1 leading-tight text-center")
+            div(class="absolute bottom-0 left-0 -ml-3 md:-ml-8 lg:-ml-0 flex flex-col gap-2 ")
+                div(class="bg-red-400 rounded-md text-white font-['Circe'] font-medium text-sm px-2 py-0.5 xl:py-1 leading-tight text-center")
                     |Новинка
-                div(class="bg-green-400 rounded-md text-white font-['Circe'] font-thin text-sm px-2 py-1 leading-tight text-center w-3/4")
+                div(class="bg-green-400 rounded-md text-white font-['Circe'] font-thin text-sm px-2 py-0.5 xl:py-1 leading-tight text-center w-3/4")
                     |-99%
         else
             div(class="absolute bottom-0 left-0 -ml-8 lg:-ml-0 flex flex-col gap-2")
 mixin buy_card_image_text(enabler)
-    div(class="inline-flex flex-col w-full p-4 space-y-6 px-4 items-center lg:items-stretch")
+    div(class="inline-flex flex-col w-full p-4 space-y-6 lg:space-y-2 xl:space-y-6 px-4 items-center lg:items-stretch -mr-11 md:-mr-0")
         div(class="w-full inline-flex justify-around")
             +buy_card_image(enabler)
         div(class="flex flex-col items-start gap-2 whitespace-pre-wrap")
-            div(class="mb-8")
+            div(class="md:mb-8 lg:mb-2 xl:mb-8")
                 +buy_card_text()
                 +buy_card_under_text()
-            div(class="inline-flex items-start mb-2")
+            div(class="inline-flex items-start md:mb-2")
                 +money()
-            div(class="flex items-center justify-between w-full")
+            div(class="hidden md:flex items-center justify-between w-full")
                 div(class="flex")
                     +button_card()
-                div(class="flex space-x-4")
+                div(class="flex space-x-4 lg:space-x-2 xl:space-x-4")
                     +button_compare
                     +button_heart
