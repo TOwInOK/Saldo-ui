@@ -38,15 +38,15 @@ mixin money()
 
 mixin buy_card_image(enabler)
     div(class="relative")
-        img(src="helicopter.png", alt="helicopter", class="h-44 w-36lg:object-scale-down lg:object-center lg:p-0 ")
+        img(src="helicopter.png", alt="helicopter", class="h-44 w-36 lg:size-auto lg:p-4  lg:object-scale-down lg:object-center  ")
         if (enabler === true)
-            div(class="absolute bottom-0 left-0 -ml-8 lg:-ml-5 flex flex-col gap-2")
+            div(class="absolute bottom-0 left-0 -ml-8 lg:-ml-0 flex flex-col gap-2")
                 div(class="bg-red-400 rounded-md text-white font-['Circe'] font-medium text-sm px-2 py-1 leading-tight text-center")
                     |Новинка
                 div(class="bg-green-400 rounded-md text-white font-['Circe'] font-thin text-sm px-2 py-1 leading-tight text-center w-3/4")
                     |-99%
         else
-            div(class="absolute bottom-0 left-0 -ml-8 lg:-ml-5 flex flex-col gap-2")
+            div(class="absolute bottom-0 left-0 -ml-8 lg:-ml-0 flex flex-col gap-2")
 mixin buy_card_image_text(enabler)
     div(class="inline-flex flex-col w-full p-4 space-y-6 px-4 items-center lg:items-stretch")
         div(class="w-full inline-flex justify-around")
