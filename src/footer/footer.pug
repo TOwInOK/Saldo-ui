@@ -53,21 +53,21 @@ footer
                         |Нужна помощь в выборе инструмента?
                 div(class="block md:flex space-y-2.5 md:space-y-0 md:space-x-3 lg:flex-grow")
                     input(placeholder="Номер телефона", type="text", name="search", class="w-full md:w-3/5 placeholder:text-slate-400 block border rounded-xl border-saldo py-2 pl-4 shadow-sm focus:outline-none focus:ring-1 text-sm md:text-lg")
-                    button(class="w-full py-3 bg-blue-800 rounded-lg md:w-2/5 text-nowrap")
-                        p(class="text-white text-lg font-bold font-['Circe'] leading-tight")
+                    button(class="w-full py-3 bg-saldo hover:bg-slate-300 rounded-lg md:w-2/5 text-nowrap")
+                        p(class="text-white text-lg  font-serif leading-tight")
                             |Отправить заявку
         //about block
         div(class="p-4 py-6 bg-saldo flex flex-col space-y-4 md:block px-4 lg:px-16")
-            div(class="bg-saldo flex flex-col space-y-4 md:flex-row md:space-y-0 md:justify-between md:w-full md:gap-4")
-                div(class="flex justify-between text-white md:w-2/4")
-                    div(class="flex flex-col gap-2 font-bold text-sm")
+            div(class="bg-saldo flex flex-col space-y-4 md:flex-row md:space-y-0 md:justify-between md:w-full md:gap-4 ")
+                div(class="flex justify-between md:w-2/5")
+                    div(class="flex flex-col gap-2 font-bold text-sm text-white")
                         |Разделы
                         div(class="text-sm font-normal")
                             ul(
                                 class="*no-underline hover:*:underline space-y-1.5")
                               each el in footer_menu
                                   li(href='#') #{el}
-                    div(class="flex flex-col gap-2 font-bold text-sm")
+                    div(class="flex flex-col gap-2 font-bold text-sm text-white")
                         |Контакты
                         div(class="text-sm font-normal grow")
                             ul(class="*no-underline hover:*:underline space-y-1.5")
@@ -94,8 +94,10 @@ footer
                                   li(href='#') #{el}
                         div(class="hidden md:block lg:hidden")
                             +payments
-                div(class="hidden lg:block lg:w-1/4")
+                div(class="hidden lg:flex lg:w-1/4 justify-around")
                     +payments
+
+            //eula
             div(class="block space-y-2.5")
                 div(class="inline-flex  items-center justify-between")
                     div(class="w-full size-1/2 flex")

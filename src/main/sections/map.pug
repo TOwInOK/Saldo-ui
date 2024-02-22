@@ -1,0 +1,23 @@
+include ../../mod
+
+div(class="flex flex-col md:flex-row bg-sky-200 rounded-2xl space-y-3 md:space-y-0")
+    div(class="flex flex-col gap-2 md:space-y-3 md:w-3/5 md:p-10 p-4 text-saldo items-center md:items-start")
+        div(class=" md:text-3xl text-xl font-bold") Контакты
+        div(class="inline-flex flex-col space-y-2 items-center md:items-start")
+            +address("г. Нижняя Салда ул. Ломоносова 10", "#")
+            +phone("9097054703")
+            +email("oknaveka-ns@mail.ru")
+        div(class="flex pt-3 gap-2")
+            +big_whatsapp("#")
+            +big_telegram("#")
+    div(id="map" style="" class="rounded-xl md:w-3/5 w-full h-[304px]" )
+    script.
+      DG.then(function() {
+        var map = DG.map('map', {
+          center: [58.074969, 60.695553],
+          zoom: 20,
+          fullscreenControl: false,
+          zoomControl: false
+        });
+        DG.marker([58.074969, 60.695553]).addTo(map).bindPopup('Салда строй');
+      });

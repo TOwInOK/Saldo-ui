@@ -23,6 +23,10 @@ mixin address(destination, destination_link)
     //- we need to use != in href cause link can contain &
     address(target="_blank" href!=destination_link) #{destination}
 
+mixin email(destination)
+    //- we need to use != in href cause link can contain &
+    a(href!="email:" + destination) #{destination}
+
 //- Use this mixin like 8005553555 without 8 or +7
 mixin phone(numbers)
   - let formattedNumber = "+7 (" + numbers.slice(0, 3) + ") " + numbers.slice(3, 6) + "-" + numbers.slice(6, 8) + "-" + numbers.slice(8)
