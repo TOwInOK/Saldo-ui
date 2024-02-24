@@ -32,7 +32,8 @@ export default defineConfig({
             theme: {
               extend: {
                 colors: {
-                  saldo: "#3E5DA7",
+                  "saldo": "#3E5DA7",
+                  "saldo-gray": "#9EAED3",
                 },
               },
             },

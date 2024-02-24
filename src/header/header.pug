@@ -31,11 +31,9 @@ header(
 header(
     class="lg:px-16 bg-saldo text-white")
     nav(
-        class="lg:hidden items-center py-2 md:py-4")
-        ul(
-            class="flex items-center justify-around") 
-            li
+        class="flex lg:hidden items-center py-2 lg:py-4 justify-evenly md:-ml-8")
+            ul
                 +hamburger("white")
-            li(class="min-w-2.5 mb-1")
-                +logo_mobile()
+            ul(class="min-w-2.5 mb-1")
+                +logo_mobile_header()
             +mobile_addition_buttons()
