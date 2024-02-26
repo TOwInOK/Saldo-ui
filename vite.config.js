@@ -37,6 +37,9 @@ export default defineConfig({
                   "saldo-100": "#E6EDFF",
                   "saldo-600": "#1D2848",
                 },
+                screens: {
+                  'vsm': '375px',
+                }
               },
             },
             plugins: [],
