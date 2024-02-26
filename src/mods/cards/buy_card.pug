@@ -23,7 +23,7 @@ mixin buy_card_text()
         |Хеликоптер
 
 mixin buy_card_under_text()
-    div(class="text-slate-800 text-base font-normal  leading-snug line-clamp-2")
+    div(class="text-slate-800 text-base font-normal leading-snug line-clamp-2")
         |Скорость, 300 км в час,
         |мощь и сила в руках его
         |что-то ещё про силу вертолёта
@@ -40,7 +40,7 @@ mixin buy_card_image(enabler)
     div(class="relative")
         img(src="helicopter.png", alt="helicopter", class="h-44 w-36 lg:size-auto lg:p-2 xl:p-4 lg:object-scale-down lg:object-center  ")
         if (enabler === true)
-            div(class="absolute bottom-0 left-0 -ml-4 lg:-ml-0 flex flex-col gap-2 ")
+            div(class="absolute bottom-0 left-0 -ml-2 lg:-ml-0 flex flex-col gap-2 ")
                 div(class="bg-red-400 rounded-md text-white  font-medium text-sm px-2 py-0.5 xl:py-1 leading-tight text-center")
                     |Новинка
                 div(class="bg-green-400 rounded-md text-white font-thin text-sm px-2 py-0.5 xl:py-1 leading-tight text-center w-3/4")
