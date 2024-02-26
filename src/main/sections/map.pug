@@ -10,14 +10,4 @@ div(class="flex flex-col md:flex-row bg-saldo-100 rounded-2xl space-y-3 md:space
         div(class="flex pt-3 gap-2")
             +big_whatsapp("#")
             +big_telegram("#")
-    div(id="map" style="" class="rounded-xl md:w-3/5 w-full h-[304px]" )
-    script.
-      DG.then(function() {
-        var map = DG.map('map', {
-          center: [58.074969, 60.695553],
-          zoom: 20,
-          fullscreenControl: false,
-          zoomControl: false
-        });
-        DG.marker([58.074969, 60.695553]).addTo(map).bindPopup('Салда строй');
-      });
+    iframe(src='https://yandex.ru/map-widget/v1/?ll=60.695552%2C58.074969&mode=search&oid=123486134645&ol=biz&utm_campaign=desktop&utm_medium=search&utm_source=maps&z=17.12' frameborder="0" allowfullscreen="true" class="rounded-xl md:w-3/5 w-full h-[304px]")
