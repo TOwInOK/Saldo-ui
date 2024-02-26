@@ -11,11 +11,11 @@ mixin buttonRight
             path(d="M17.3438 20.625L11.7188 15L17.3438 9.375" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
 
 mixin button_catalog(text)
-    button(class="p-2 px-2 lg:px-6 bg-sky-100 rounded-xl items-center text-saldo hover:bg-saldo hover:text-white")
+    button(class="p-2 px-2 lg:px-6 bg-saldo-100 rounded-xl items-center text-saldo hover:bg-saldo hover:text-white")
         div(class="text-blue-800 text-base font-bold font-['Circe'] leading-snug")
         |#{text || "Каталог"}
 
 mixin button_card
-    button(class="p-0.5 px-2 xl:px-3 bg-saldo rounded-xl items-center text-base lg:text-xs xl:text-base text-white hover:bg-sky-100 hover:text-saldo")
+    button(class="p-0.5 px-2 xl:px-3 bg-saldo rounded-xl items-center text-base lg:text-xs xl:text-base text-white hover:bg-saldo-100 hover:text-saldo")
         div(class="text-blue-800 text-base font-bold font-['Circe'] leading-snug")
         |В корзину

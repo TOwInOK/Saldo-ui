@@ -19,7 +19,7 @@ mixin buy_card_end(enabler)
 
 
 mixin buy_card_text()
-    div(class="text-slate-800 text-xl font-bold font-['Circe'] leading-normal")
+    div(class="text-saldo-800 text-xl font-bold font-['Circe'] leading-normal")
         |Хеликоптер
 
 mixin buy_card_under_text()
@@ -31,9 +31,9 @@ mixin buy_card_under_text()
 
 mixin money()
     div(class="justify-start items-start gap-4 lg:gap-2 xl:gap-4 inline-flex")
-        div(class="text-saldo text-xl font-bold font-['Circe'] leading-normal")
+        div(class="text-saldo text-xl font-bold leading-normal")
             |999 ₽
-        div(class="font-thin text-slate-400 leading-snug line-through")
+        div(class="font-thin text-saldo-300 leading-snug line-through")
             |999 999 ₽
 
 mixin buy_card_image(enabler)

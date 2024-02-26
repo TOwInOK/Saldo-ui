@@ -8,12 +8,12 @@ section(class="lg:grid lg:grid-cols-3 lg:gap-4")
         div(class="inline-flex justify-around items-center py-10 p-4 md:p-0 ")
             // Text
             div(class="z-10")
-                h1(class="inline-block text-black text-3xl md:text-5xl lg:text-6xl font-bold py-2")
+                h1(class="inline-block text-saldo-600 text-3xl md:text-5xl lg:text-6xl font-bold py-2")
                     | Банер
                     br
                     span(class="text-saldo")
                         | первый
-                h4(class="text-sm md:text-lg")
+                h4(class="text-sm md:text-lg text-saldo-600")
                     | с текущей акцией
             // Image
             img(class="lg:w-2/6 size-2/4 rotate-12", src="helicopter.png")
@@ -22,13 +22,13 @@ section(class="lg:grid lg:grid-cols-3 lg:gap-4")
     // Second picture
     div(class="hidden lg:flex items-center px-5 bg-sky-100 rounded-3xl drop-shadow-lg shadow-black relative overflow-clip")
         // Text (idk this figma template so wierd) Just change it pls
-        div(class="inline-block justify-start whitespace-nowrap absolute top-0 left-0 p-4 pl-5")
-            h1(class="text-black md:text-3xl lg:text-4xl font-bold inline-block")
+        div(class="inline-block text-saldo-600 justify-start whitespace-nowrap absolute top-0 left-0 p-4 pl-5")
+            h1(class="md:text-3xl lg:text-4xl font-bold inline-block")
                 | Банер
                 |
                 span(class="text-saldo")
                     | первый
-            h4
+            h4()
                 | с текущей акцией
         // Button left
         +buttonLeft

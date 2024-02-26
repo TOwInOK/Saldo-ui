@@ -33,7 +33,9 @@ export default defineConfig({
               extend: {
                 colors: {
                   "saldo": "#3E5DA7",
-                  "saldo-gray": "#9EAED3",
+                  "saldo-300": "#9EAED3",
+                  "saldo-100": "#E6EDFF",
+                  "saldo-600": "#1D2848",
                 },
               },
             },
