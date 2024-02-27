@@ -1,39 +1,56 @@
 include ../mod
 
-section(class="lg:grid lg:grid-cols-3 lg:gap-4")
-    // First picture
-    div(class="flex col-span-3 lg:flex-nowrap md:col-span-2 px-5 bg-gray-100 rounded-3xl items-center drop-shadow-lg shadow-black overflow-clip")
-        +buttonLeft
-        // Image + text
-        div(class="inline-flex justify-around items-center py-10 p-4 md:p-0 ")
-            // Text
-            div(class="z-10")
-                h1(class="inline-block text-saldo-600 text-3xl md:text-5xl lg:text-6xl font-bold py-2")
-                    | Банер
-                    br
-                    span(class="text-saldo")
-                        | первый
-                h4(class="text-sm md:text-lg text-saldo-600")
-                    | с текущей акцией
-            // Image
-            img(class="lg:w-2/6 size-2/4 rotate-12", src="helicopter.png")
-        +buttonRight
+//section(class="lg:grid lg:grid-cols-3 lg:gap-4")
+//    // First picture
+//    div(class="flex col-span-3 lg:flex-nowrap md:col-span-2 px-5 bg-gray-100 rounded-3xl items-center drop-shadow-lg shadow-black overflow-clip")
+//        +buttonLeft
+//        // Image + text
+//        div(class="inline-flex justify-around items-center py-10 p-4 md:p-0 ")
+//            // Text
+//            div(class="z-10")
+//                h1(class="inline-block text-saldo-600 text-3xl md:text-5xl lg:text-6xl font-bold py-2")
+//                    | Банер
+//                    br
+//                    span(class="text-saldo")
+//                        | первый
+//                h4(class="text-sm md:text-lg text-saldo-600")
+//                    | с текущей акцией
+//            // Image
+//            img(class="lg:w-2/6 size-2/4 rotate-12", src="helicopter.png")
+//        +buttonRight
+//
+//    // Second picture
+//    div(class="hidden lg:flex items-center px-5 bg-sky-100 rounded-3xl drop-shadow-lg shadow-black relative overflow-clip")
+//        // Text (idk this figma template so wierd) Just change it pls
+//        div(class="inline-block text-saldo-600 justify-start whitespace-nowrap absolute top-0 left-0 p-4 pl-5")
+//            h1(class="md:text-3xl lg:text-4xl font-bold inline-block")
+//                | Банер
+//                |
+//                span(class="text-saldo")
+//                    | первый
+//            h4()
+//                | с текущей акцией
+//        // Button left
+//        +buttonLeft
+//        // Image
+//        div(class="flex py-20 px-5 justify-end ")
+//            img(class="w-4/6 -mb-20 rotate-12", src="helicopter.png")
+//        // Button right
+//        +buttonRight
 
-    // Second picture
-    div(class="hidden lg:flex items-center px-5 bg-sky-100 rounded-3xl drop-shadow-lg shadow-black relative overflow-clip")
-        // Text (idk this figma template so wierd) Just change it pls
-        div(class="inline-block text-saldo-600 justify-start whitespace-nowrap absolute top-0 left-0 p-4 pl-5")
-            h1(class="md:text-3xl lg:text-4xl font-bold inline-block")
-                | Банер
-                |
-                span(class="text-saldo")
-                    | первый
-            h4()
-                | с текущей акцией
-        // Button left
-        +buttonLeft
-        // Image
-        div(class="flex py-20 px-5 justify-end ")
-            img(class="w-4/6 -mb-20 rotate-12", src="helicopter.png")
-        // Button right
-        +buttonRight
+section(class="flex drop-shadow-md gap-4")
+        div(class="flex grow items-center bg-saldo-50 rounded-2xl gap-4 px-2")
+            div(class="z-10 hidden lg:block")
+                +buttonLeft
+            a(href="#" class="grow overflow-hidden")
+                img(src="first_image.png", alt="" class="object-cover h-1/2 md:h-80 lg:h-2/3 w-full")
+            div(class="z-10 hidden lg:block")
+                +buttonRight
+
+        div(class="hidden lg:flex items-center bg-saldo-50 rounded-2xl gap-4 px-2")
+            div(class="z-10")
+                +buttonLeft
+            div(class="overflow-hidden p-2 grow")
+                img(src="second_image.png", alt="" class="object-cover h-1/3")
+            div(class="z-10")
+                +buttonRight
