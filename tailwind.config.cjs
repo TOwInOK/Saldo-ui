@@ -15,6 +15,7 @@ module.exports = {
       },
       screens: {
         'vsm': '375px',
+        '1xl': '1441px',
       }
     },
   },
