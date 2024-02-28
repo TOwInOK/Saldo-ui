@@ -7,7 +7,7 @@ include ../mod
 header(
     class="lg:px-16 bg-saldo text-white")
     nav(
-        class="hidden lg:flex items-center justify-between h-14 gap-5")
+        class="hidden lg:flex items-center justify-between h-14 gap-5 max-w-[1440px] 2xl:mx-auto shrink-0")
         ul(
             class="inline-flex items-center gap-x-4 *no-underline hover:*:underline")
             each el in menu
@@ -29,9 +29,9 @@ header(
 
 //- sm header
 header(
-    class="lg:px-16 bg-saldo text-white")
+    class="lg:hidden bg-saldo text-white shrink-0")
     nav(
-        class="flex lg:hidden items-center py-2 lg:py-4 justify-evenly md:-ml-8")
+        class="flex items-center py-2 lg:py-4 justify-evenly md:-ml-8")
             ul
                 +hamburger("white")
             ul(class="min-w-2.5 mb-1")
