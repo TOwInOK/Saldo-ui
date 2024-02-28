@@ -7,8 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "tw-build": "tailwindcss build -i ./index.css -o ./output.css",
-    "tw-watch": "tailwindcss ./index.css -o ./output.css --watch"
+    "tw-build": "tailwindcss build -i index.css -o ./output.css",
+    "tw-watch": "tailwindcss index.css -o ./output.css --watch"
   },
   "devDependencies": {
     "@prettier/plugin-pug": "^3.0.0",
