@@ -32,7 +32,7 @@ header(
     class="lg:hidden bg-saldo text-white shrink-0")
     nav(
         class="flex items-center py-2 lg:py-4 justify-evenly md:-ml-8")
-            div(onclick="openMobileMenu()")
+            div(onclick="toggleMobileMenu()")
                 +hamburger("white")
             div(class="min-w-2.5 mb-1")
                 +logo_mobile_header()
@@ -44,11 +44,11 @@ header(
         +submenu()
 
     script.
-        openMobileMenu = () => {
+        toggleMobileMenu = () => {
             document.getElementById("mobile-dropdown-menu").classList.toggle("hidden")
         }
 
     script.
-      openMobileSubMenu = () => {
+      toggleMobileSubMenu = () => {
         document.getElementById("mobile-dropdown-submenu").classList.toggle("hidden")
       }

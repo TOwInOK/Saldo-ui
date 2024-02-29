@@ -22,7 +22,8 @@ mixin button_card
 
 mixin menu_categorie(text)
     li(class="w-full")
-        button(class="flex rounded-md hover:bg-saldo-300 items-center justify-between w-full" onclick="openMobileSubMenu()")
+    li(class="w-full")
+        button(class="flex rounded-md hover:bg-saldo-300 items-center justify-between w-full" onclick="toggleMobileSubMenu()")
             div(class="flex gap-2 items-center ml-2 p-2")
                 div(class="aspect-square bg-saldo size-6 mb-1")
                 span(class="text-saldo-600 text-lg")
@@ -32,7 +33,19 @@ mixin menu_categorie(text)
                     path(d="M17.3438 20.625L11.7188 15L17.3438 9.375" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
 
 mixin submenu_categorie(text)
-    li(class="w-full")
-        button(class="flex rounded-md hover:bg-saldo-300 items-center justify-between w-full")
-            span(class="text-saldo-600 text-lg ml-2.5 p-2")
-                | #{text || "Категория"}
+    div(class="w-full lg:w-auto")
+        button(class="flex lg:flex-col rounded-md hover:bg-saldo-300 items-center justify-between w-full lg:w-auto lg:items-start")
+            div(class="ml-2.5 p-2 lg:m-0 lg:p-0 items-start flex flex-col justify-start gap-4")
+                span(class="text-saldo-600 text-lg")
+                    | #{text || "Категория"}
+                span(class="text-saldo-600 text-lg hidden lg:block text-pretty")
+                    |LOREM LOREM LOREM
+                    |LOREM LOREM LOREM
+                    |LOREM LOREM LOREM
+                    |LOREM LOREM LOREM
+                div(class="hidden lg:flex fill-transparent stroke-saldo-300 ml-1")
+                    span(class="text-saldo-300 text-lg hidden lg:block")
+                        | Ещё
+                    svg(width="30" height="30", viewBox="-5 0 30 30", xmlns="http://www.w3.org/2000/svg", class="size-10 -rotate-90")
+                        path(d="M17.3438 20.625L11.7188 15L17.3438 9.375" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+
