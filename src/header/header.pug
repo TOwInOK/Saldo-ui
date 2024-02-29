@@ -40,8 +40,15 @@ header(
 
     div(class="hidden inline-flex h-dvh absolute z-10 w-full top-0 bg-white" id="mobile-dropdown-menu")
         +menu()
+    div(class="hidden inline-flex h-dvh absolute z-20 w-full top-0 bg-white" id="mobile-dropdown-submenu")
+        +submenu()
 
     script.
         openMobileMenu = () => {
             document.getElementById("mobile-dropdown-menu").classList.toggle("hidden")
         }
+
+    script.
+      openMobileSubMenu = () => {
+        document.getElementById("mobile-dropdown-submenu").classList.toggle("hidden")
+      }

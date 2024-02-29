@@ -22,12 +22,17 @@ mixin button_card
 
 mixin menu_categorie(text)
     li(class="w-full")
-        button(class="flex rounded-md hover:bg-saldo-300 p-2 items-center justify-between w-full")
-            div(class="flex gap-2 items-center")
+        button(class="flex rounded-md hover:bg-saldo-300 items-center justify-between w-full" onclick="openMobileSubMenu()")
+            div(class="flex gap-2 items-center ml-2 p-2")
                 div(class="aspect-square bg-saldo size-6 mb-1")
-                div(class="text-saldo-600 text-lg")
+                span(class="text-saldo-600 text-lg")
                     | #{text || "Категория"}
             div(class="flex fill-transparent stroke-saldo")
                 svg(width="30" height="30", viewBox="0 0 30 30", xmlns="http://www.w3.org/2000/svg", class="size-10 rotate-180")
                     path(d="M17.3438 20.625L11.7188 15L17.3438 9.375" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
 
+mixin submenu_categorie(text)
+    li(class="w-full")
+        button(class="flex rounded-md hover:bg-saldo-300 items-center justify-between w-full")
+            span(class="text-saldo-600 text-lg ml-2.5 p-2")
+                | #{text || "Категория"}
