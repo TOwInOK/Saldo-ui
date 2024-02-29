@@ -34,7 +34,7 @@ mixin menu_categorie(text)
 
 mixin submenu_categorie(text)
     div(class="w-full lg:w-auto")
-        button(class="flex lg:flex-col rounded-md hover:bg-saldo-300 items-center justify-between w-full lg:w-auto lg:items-start")
+        button(class="flex lg:flex-col rounded-md hover:bg-saldo-300 lg:hover:bg-transparent items-center justify-between w-full lg:w-auto lg:items-start")
             div(class="ml-2.5 p-2 lg:m-0 lg:p-0 items-start flex flex-col justify-start gap-4")
                 span(class="text-saldo-600 text-lg")
                     | #{text || "Категория"}
