@@ -11,7 +11,7 @@ header(
         ul(
             class="inline-flex items-center gap-x-4 *no-underline hover:*:underline")
             each el in menu
-                li(href='#') #{el}
+                li(href='./scr/footer.pug') #{el}
 
         ul(class="inline-flex items-center gap-4 *no-underline hover:*:underline")
             li
@@ -32,8 +32,16 @@ header(
     class="lg:hidden bg-saldo text-white shrink-0")
     nav(
         class="flex items-center py-2 lg:py-4 justify-evenly md:-ml-8")
-            ul
+            div(onclick="openMobileMenu()")
                 +hamburger("white")
-            ul(class="min-w-2.5 mb-1")
+            div(class="min-w-2.5 mb-1")
                 +logo_mobile_header()
             +mobile_addition_buttons()
+
+    div(class="hidden inline-flex h-dvh absolute z-10 w-full top-0 bg-white" id="mobile-dropdown-menu")
+        +menu()
+
+    script.
+        openMobileMenu = () => {
+            document.getElementById("mobile-dropdown-menu").classList.toggle("hidden")
+        }

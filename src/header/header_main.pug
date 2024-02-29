@@ -10,8 +10,11 @@ div(class="gap-4 flex flex-col lg:m-0")
         +menu_buttons()
         +social_buttons()
 
-    div(class="hidden lg:block")
+    div(class="hidden lg:block" id="header_main_categories")
         ul(class="flex justify-between whitespace-pre-line items-center text-saldo-600 gap-6 *no-underline hover:*:underline")
           each el in categories
               a(href="h") #{el}
+
+
+
 
