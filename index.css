@@ -11,6 +11,15 @@
     scrollbar-width: none;
 }
 
+.yes-scrollbar::-webkit-scrollbar {
+    display: block;
+}
+
+.yes-scrollbar {
+    -ms-overflow-style: scrollbar;
+    scrollbar-width: auto;
+}
+
 @layer base {
     html {
         font-family: "Circe", system-ui, sans-serif;

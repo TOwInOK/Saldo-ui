@@ -15,19 +15,21 @@ div(class="gap-4 flex flex-col lg:m-0")
           each el in categories
               a(href="h") #{el}
 
-    div(class="hidden flex lg:w-full w-screen absolute z-10 left-0 top-36 bg-white" id="dropdown-menu")
-        div(class="flex gap-8 divide-x divide-saldo-300 mx-auto max-w-screen-1xl px-4 overflow-hidden")
-            div(class="w-1/5")
+    div(class="hidden w-full h-4/6 absolute z-10 left-0 top-36 bg-white" id="dropdown-menu")
+        div(class="flex h-full divide-x divide-saldo-300 1xl:mx-auto max-w-screen-1xl px-4 overflow-hidden")
+            div(class="w-1/5 overflow-y-scroll scroll-smooth overscroll-contain")
                 +menu()
-            div(class="flex w-4/5 pl-8 h-full w-full")
+            div(class="flex pl-8 h-full w-4/5 overflow-y-scroll scroll-smooth overscroll-contain")
                 div(class="flex flex-col gap-8")
                     span(class="text-saldo-600 font-bold text-4xl") Категория
-                    +submenu()
+                    div(class="lg:w-full ")
+                        +submenu()
 
     script.
       toggleMenu = () => {
         document.getElementById("header_main_categories").classList.toggle("lg:hidden");
         document.getElementById("dropdown-menu").classList.toggle("hidden");
+        document.getElementById("eclipse").classList.toggle("hidden");
       }
 
 
