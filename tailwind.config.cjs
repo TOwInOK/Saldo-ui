@@ -2,6 +2,8 @@
 module.exports = {
   content: [
   "./index.pug",
+  "./catalog.pug",
+  "./node_modules/flowbite/**/*.js",
   "./src/**/**/*.{js,pug}"],
   theme: {
     extend: {
@@ -19,6 +21,8 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('flowbite/plugin'),
+  ],
 }
 

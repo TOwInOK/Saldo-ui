@@ -21,6 +21,7 @@
     "vite": "^5.1.0"
   },
   "dependencies": {
+    "flowbite": "^2.3.0",
     "vite-plugin-pug-transformer": "^1.0.5"
   }
 }
