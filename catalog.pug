@@ -84,14 +84,13 @@ body
                     //Виджет производитель
                     div(class="flex flex-col gap-4")
                         //main span
-                        div(class="flex justify-between items-center")
-                            //Rub
+                        button(class="flex justify-between items-center dropdown-button" type="button")
                             span(class="text-saldo-600 font-bold text-xl") Производитель
                             //arrow
-                            svg(width='10' height='16' viewbox='0 0 10 16' fill='none' xmlns='http://www.w3.org/2000/svg' class="rotate-90")
+                            svg(width='10' height='16' viewbox='0 0 10 16' fill='none' xmlns='http://www.w3.org/2000/svg' class="rotate-90 arrow-icon-90")
                                 path(d='M8.375 1.25L1.625 8L8.375 14.75' stroke='#9EAED3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
                         //block of column's checkers
-                        div
+                        div(class="dropdown-menu grid gap-4")
                             //checker column
                             ul(class="flex flex-col gap-1")
                                 +checkbox("Производитель")
@@ -101,17 +100,17 @@ body
                                 +checkbox("Производитель")
                                 +checkbox("Производитель")
                                 +checkbox("Производитель")
-                        //more and drop filter
-                        div(class="text-saldo-300")
-                           div(class="flex gap-4 items-center")
-                               span Показать ещё 100
-                               svg(width='10' height='16' viewbox='0 0 10 16' fill='none' xmlns='http://www.w3.org/2000/svg' class="-rotate-90")
-                                   path(d='M8.375 1.25L1.625 8L8.375 14.75' stroke='#9EAED3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
-                           div(class="flex gap-3 items-center")
-                               span Сбросить фильтры
-                               svg(width='15' height='15' viewbox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg')
-                                   path(d='M13.75 13.75L1.75 1.75' stroke='#9EAED3' stroke-width='2' stroke-linecap='round')
-                                   path(d='M13.75 1.75L1.75 13.75' stroke='#9EAED3' stroke-width='2' stroke-linecap='round')
+                            //more and drop filter
+                            div(class="text-saldo-300")
+                               div(class="flex gap-4 items-center")
+                                   span Показать ещё 100
+                                   svg(width='10' height='16' viewbox='0 0 10 16' fill='none' xmlns='http://www.w3.org/2000/svg' class="-rotate-90")
+                                       path(d='M8.375 1.25L1.625 8L8.375 14.75' stroke='#9EAED3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+                               div(class="flex gap-3 items-center")
+                                   span Сбросить фильтры
+                                   svg(width='15' height='15' viewbox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg')
+                                       path(d='M13.75 13.75L1.75 1.75' stroke='#9EAED3' stroke-width='2' stroke-linecap='round')
+                                       path(d='M13.75 1.75L1.75 13.75' stroke='#9EAED3' stroke-width='2' stroke-linecap='round')
 
                 //Главный компонент
                 div(class="grid gap-16 xl:grow")
