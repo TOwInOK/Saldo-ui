@@ -34,10 +34,10 @@ mixin menu_categorie(text)
 
 mixin submenu_categorie(text)
     div(class="w-full xl:w-auto")
-        a(href="./catalog.html")
+        a(href="catalog.html")
             button(class="flex xl:flex-col rounded-md hover:bg-saldo-300 xl:hover:bg-transparent items-center justify-between w-full xl:w-auto xl:items-start")
                 div(class="ml-2.5 p-2 xl:m-0 xl:p-0 items-start flex flex-col justify-start gap-4")
-                    span(href="./catalog.html" class="text-saldo-600 text-lg")
+                    span(class="text-saldo-600 text-lg")
                         | #{text || "Категория"}
                     //idk, mb this is "about field", mb that is links
                     span(class="text-saldo-600 text-lg hidden xl:block text-pretty")

@@ -3,7 +3,9 @@ module.exports = {
   content: [
   "./index.pug",
   "./catalog.pug",
-  "./src/**/**/*.{js,pug}"],
+  "./src/**/**/*.{js,pug,html}",
+  "./public/**/*.js"
+  ],
   theme: {
     extend: {
       colors: {

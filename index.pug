@@ -1,15 +1,19 @@
-include src/header/header
-div(class="flex flex-col m-4 gap-8 xl:mx-16 max-w-[1440px] 2xl:mx-auto h-full")
-    include src/header/header_main
-    div(class="hidden absolute bg-black opacity-80 size-full z-10" id="eclipse")
-    include src/main/banners
-    include src/main/sections/cards_section
-    include src/main/sections/buy_cards_section
-    include src/main/sections/advantages
-    //Change it as you wanna
-    include src/main/sections/cards_section
-    include src/main/sections/buy_cards_section
-    //^
-    include src/main/sections/gramota
-    include src/main/sections/map
-include src/footer/footer
+header
+    include src/header/header
+body
+    div(class="flex flex-col m-4 gap-8 xl:mx-16 max-w-[1440px] 2xl:mx-auto h-full")
+        include src/header/header_main
+        div(class="hidden absolute bg-black opacity-80 size-full z-10" id="eclipse")
+        include src/main/banners
+        include src/main/sections/cards_section
+        include src/main/sections/buy_cards_section
+        include src/main/sections/advantages
+        //Change it as you wanna
+        include src/main/sections/cards_section
+        include src/main/sections/buy_cards_section
+        //^
+        include src/main/sections/gramota
+        include src/main/sections/map
+script(src="./public/js/dropdown.js")
+footer
+    include src/footer/footer
