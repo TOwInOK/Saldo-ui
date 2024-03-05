@@ -1,8 +1,8 @@
 include ../../../mod
 
 //remove xl:overflow-x-visible if need scroll on pc or add it if need shadow while hover on card
-div(class="flex space-x-4 overflow-x-scroll no-scrollbar scroll-smooth w-full snap-x drop-shadow-lg" dir="ltr")
-    +card_start()
+div(class="flex xl:grid xl:grid-cols-5 gap-4 overflow-x-scroll no-scrollbar scroll-smooth w-full snap-x drop-shadow-lg" dir="ltr")
+    +card()
     for i in [1,2,3]
         +card()
-    +card_end()
+    +card()

@@ -1,23 +1,11 @@
-mixin card_start()
-    //main input
-    div(class="flex-shrink-0 xl:flex-shrink xl:inline-block bg-white rounded-2xl overflow-hidden snap-start scroll-ms-auto xl:size-1/5")
-        +card_image_text
-
 mixin card()
     //main input
-    div(class="flex-shrink-0 xl:flex-shrink xl:inline-block bg-white rounded-2xl overflow-hidden snap-center scroll-ms-auto xl:size-1/5")
-        +card_image_text
-
-mixin card_end()
-    //main input
-    div(class="flex-shrink-0 xl:flex-shrink xl:inline-block bg-white rounded-2xl overflow-hidden snap-end scroll-ms-auto xl:size-1/5")
+    div(class="flex-shrink-0 xl:flex-shrink xl:inline-block bg-white rounded-2xl overflow-hidden snap-center scroll-ms-auto")
         +card_image_text
 
 mixin card_reversed()
     div(class="flex-shrink bg-white rounded-lg")
         +card_image_text_reversed
-
-
 
 mixin card_text()
     h1(class="float-left font-bold xl:text-md xl:text-xl text-saldo-600 leading-normal")
