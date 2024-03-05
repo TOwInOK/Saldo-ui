@@ -1,15 +1,15 @@
 include ../../mod
 
 section(class="w-full flex flex-col space-y-8")
-    div(class="flex lg:justify-between lg:w-full")
+    div(class="flex xl:justify-between xl:w-full")
         // Catalog name + button catalog
-        div(class="flex w-full lg:w-auto content-between justify-between lg:space-x-12 items-center")
+        div(class="flex w-full xl:w-auto content-between justify-between xl:space-x-12 items-center")
             div(class="whitespace-pre-wrap")
-                p(class="text-slate-800 lg:text-3xl text-xl font-bold") Их купили сегодня
+                span(class="text-slate-800 xl:text-3xl text-xl font-bold") Их купили сегодня
             div(class="justify-end")
                 +button_catalog("Смотреть все")
         // Arrows
-        div(class="hidden lg:flex justify-around gap-2")
+        div(class="hidden xl:flex justify-around gap-2")
             +buttonLeft()
             +buttonRight()
     include card-section/buy_cards

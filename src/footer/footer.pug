@@ -42,8 +42,8 @@ footer
     div(class="shrink-0 mt-8")
         //sender
         div(class="bg-saldo-100 rounded-t-2xl")
-            div(class="flex-col lg:flex lg:flex-row items-center space-y-4 lg:space-y-0 px-4 md:px-8 py-4 lg:px-16 max-w-[1440px] 2xl:mx-auto")
-                div(class="flex justify-start gap-4 lg:flex-grow")
+            div(class="flex-col xl:flex xl:flex-row items-center space-y-4 xl:space-y-0 px-4 md:px-8 py-4 xl:px-16 max-w-[1440px] 2xl:mx-auto")
+                div(class="flex justify-start gap-4 xl:flex-grow")
                     a(class=" stroke-saldo fill-none size-auto")
                         svg(width="28" height="28" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="")
                             path(d="M1.30273 15.2351V13.9409C1.30273 12.9113 1.72539 11.9238 2.47771 11.1957C3.23004 10.4676 4.25041 10.0586 5.31436 10.0586H6.65156C7.00621 10.0586 7.34634 10.1949 7.59711 10.4376C7.84789 10.6803 7.98877 11.0095 7.98877 11.3527V17.8233C7.98877 18.1665 7.84789 18.4957 7.59711 18.7384C7.34634 18.9811 7.00621 19.1174 6.65156 19.1174H5.31436C4.25041 19.1174 3.23004 18.7084 2.47771 17.9803C1.72539 17.2522 1.30273 16.2647 1.30273 15.2351V15.2351ZM22.698 15.2351V13.9409C22.698 12.9113 22.2754 11.9238 21.5231 11.1957C20.7707 10.4676 19.7504 10.0586 18.6864 10.0586H17.3492C16.9946 10.0586 16.6544 10.1949 16.4037 10.4376C16.1529 10.6803 16.012 11.0095 16.012 11.3527V17.8233C16.012 18.1665 16.1529 18.4957 16.4037 18.7384C16.6544 18.9811 16.9946 19.1174 17.3492 19.1174H18.6864C19.7504 19.1174 20.7707 18.7084 21.5231 17.9803C22.2754 17.2522 22.698 16.2647 22.698 15.2351V15.2351Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
@@ -51,13 +51,13 @@ footer
                             path(d="M18.686 19.1177V20.4118C18.7265 21.0544 18.5035 21.6866 18.0654 22.1712C17.6273 22.6557 17.0095 22.9535 16.3459 23H12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
                     p(class="text-lg md:text-xl font-bold text-saldo")
                         |Нужна помощь в выборе инструмента?
-                div(class="block md:flex space-y-2.5 md:space-y-0 md:space-x-3 lg:flex-grow")
+                div(class="block md:flex space-y-2.5 md:space-y-0 md:space-x-3 xl:flex-grow")
                     input(placeholder="Номер телефона", type="text", name="search", class="w-full md:w-3/5 placeholder:text-slate-400 block border rounded-xl border-saldo py-2 pl-4 shadow-sm focus:outline-none focus:ring-1 text-sm md:text-lg")
                     button(class="w-full py-3 bg-saldo hover:bg-saldo-300 rounded-lg md:w-2/5 text-nowrap")
                         p(class="text-white text-lg leading-tight")
                             |Отправить заявку
         //about block
-        div(class="p-4 py-6 bg-saldo flex flex-col space-y-4 md:block px-4 lg:px-16")
+        div(class="p-4 py-6 bg-saldo flex flex-col space-y-4 md:block px-4 xl:px-16")
             div(class="bg-saldo flex flex-col space-y-4 md:flex-row md:space-y-0 md:justify-between md:w-full md:gap-4 max-w-[1440px] 2xl:mx-auto")
                 div(class="flex flex-col gap-4 vsm:gap-0 vsm:flex-row justify-between md:w-2/5")
                     div(class="flex flex-col gap-2 font-bold text-sm text-white")
@@ -84,7 +84,7 @@ footer
                                         +big_whatsapp("link")
                         div(class="md:hidden")
                             +payments
-                div(class="flex justify-between bg-saldo text-white md:w-2/4 lg:w-1/4")
+                div(class="flex justify-between bg-saldo text-white md:w-2/4 xl:w-1/4")
                     div(class="flex flex-col gap-2 font-bold text-sm")
                         | Юридическая информация
                         div(class="text-sm font-normal h-1/2")
@@ -92,9 +92,9 @@ footer
                                 class="*no-underline hover:*:underline space-y-1.5 text-white text-sm font-normal leading-tight text-pretty")
                               each el in contacts
                                   li(href='#') #{el}
-                        div(class="hidden md:block lg:hidden")
+                        div(class="hidden md:block xl:hidden")
                             +payments
-                div(class="hidden lg:flex lg:w-1/4 justify-around")
+                div(class="hidden xl:flex xl:w-1/4 justify-around")
                     +payments
 
             //eula
