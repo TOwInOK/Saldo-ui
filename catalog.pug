@@ -23,12 +23,13 @@ body
                         span(class="font-bold text-md") Категория
                         //Заголоко виджета
                         div(class="grid gap-4")
-                            div(class="flex gap-4 items-center")
-                                svg(width='10' height='16' viewbox='0 0 10 16' fill='none' xmlns='http://www.w3.org/2000/svg')
+                            button(class="flex gap-4 items-center dropdown-button")
+                                svg(class="arrow-icon-180 size-4 mb-0.5" viewbox='0 0 10 16' fill='none' xmlns='http://www.w3.org/2000/svg')
                                     path(d='M8.375 1.25L1.625 8L8.375 14.75' stroke='#9EAED3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
                                 span
                                     | Главная категория
-                            div(class="grid gap-4 ml-8")
+                            //Dropdown menu
+                            div(class="grid gap-4 ml-8 dropdown-menu")
                                 //categories
                                 span(class="bg-[#E6EDFF] rounded-lg py-2 pl-2 ")
                                     | Категория
@@ -50,7 +51,7 @@ body
                                 div(class="mt-4 text-saldo-300")
                                     div(class="flex gap-4 items-center")
                                         span Показать ещё 100
-                                        svg(width='10' height='16' viewbox='0 0 10 16' fill='none' xmlns='http://www.w3.org/2000/svg' class="-rotate-90")
+                                        svg( viewbox='0 0 10 16' fill='none' xmlns='http://www.w3.org/2000/svg' class="size-4 -rotate-90")
                                             path(d='M8.375 1.25L1.625 8L8.375 14.75' stroke='#9EAED3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
                                     div(class="flex gap-3 items-center")
                                         span Сбросить фильтры
@@ -66,7 +67,7 @@ body
                             //Rub
                             span(class="text-saldo-600 font-bold text-xl") Цена, ₽
                             //arrow
-                            svg(width='10' height='16' viewbox='0 0 10 16' fill='none' xmlns='http://www.w3.org/2000/svg' class="-rotate-90 arrow-icon-90")
+                            svg(viewbox='0 0 10 16' fill='none' xmlns='http://www.w3.org/2000/svg' class="size-4 -rotate-90 arrow-icon-90")
                                 path(d='M8.375 1.25L1.625 8L8.375 14.75' stroke='#9EAED3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
                         //Prices lines and choose line
                         div(class="grid gap-6 dropdown-menu")
@@ -90,7 +91,7 @@ body
                         button(class="flex justify-between items-center dropdown-button" type="button")
                             span(class="text-saldo-600 font-bold text-xl") Производитель
                             //arrow
-                            svg(width='10' height='16' viewbox='0 0 10 16' fill='none' xmlns='http://www.w3.org/2000/svg' class="-rotate-90 arrow-icon-90")
+                            svg(viewbox='0 0 10 16' fill='none' xmlns='http://www.w3.org/2000/svg' class="size-4 -rotate-90 arrow-icon-90")
                                 path(d='M8.375 1.25L1.625 8L8.375 14.75' stroke='#9EAED3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
                         //block of column's checkers
                         div(class="dropdown-menu grid gap-4")
@@ -107,7 +108,7 @@ body
                             div(class="text-saldo-300")
                                div(class="flex gap-4 items-center")
                                    span Показать ещё 100
-                                   svg(width='10' height='16' viewbox='0 0 10 16' fill='none' xmlns='http://www.w3.org/2000/svg' class="-rotate-90")
+                                   svg(viewbox='0 0 10 16' fill='none' xmlns='http://www.w3.org/2000/svg' class="size-4 -rotate-90")
                                        path(d='M8.375 1.25L1.625 8L8.375 14.75' stroke='#9EAED3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
                                div(class="flex gap-3 items-center")
                                    span Сбросить фильтры
