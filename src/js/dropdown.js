@@ -1,58 +1,43 @@
 document.addEventListener('DOMContentLoaded', function () {
-  document.addEventListener('click', function (event) {
-    const button = event.target.closest('.dropdown-button');
-    // Проверяем, кликнули ли мы на кнопку
-    if (button) {
-      const dropdownMenu = button.nextElementSibling; // Получаем следующий элемент (div.dropdown-menu)
-      const arrowIcons = button.querySelectorAll('.arrow-icon, .arrow-icon-90, .arrow-icon-180');
+  const dropdownButtons = document.querySelectorAll('.dropdown-button');
 
+  dropdownButtons.forEach(function (button) {
+    const arrowIcon = button.querySelector('.arrow-icon');
+    const arrowIcon_90 = button.querySelector('.arrow-icon-90');
+    const arrowIcon_180 = button.querySelector('.arrow-icon-180');
+    const dropdownMenu = button.nextElementSibling; // Получаем следующий элемент (div.dropdown-menu)
+
+    button.addEventListener('click', function () {
+      // Переключаем видимость меню
       dropdownMenu.classList.toggle('hidden');
-      arrowIcons.forEach(arrow => {
-        switch (arrow) {
-          case arrow.classList.contains('arrow-icon'): {
-            arrow.style.transform = dropdownMenu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
-            break;
-          }
-          case arrow.classList.contains('arrow-icon-90'): {
-            arrow.style.transform = dropdownMenu.classList.contains('hidden') ? 'rotate(90deg)' : 'rotate(270deg)';
-            break;
-          }
-          case arrow.classList.contains('arrow-icon-180'): {
-            arrow.style.transform = dropdownMenu.classList.contains('hidden') ? 'rotate(180deg)' : 'rotate(360deg)';
-            break;
-          }
-        }
-      });
-    } else {
-      // Закрываем все открытые меню, если клик был вне
-      closeAllDropdowns(event);
-    }
-  });
 
-  function closeAllDropdowns(event) {
-    const dropdownButtons = document.querySelectorAll('.dropdown-button');
-    dropdownButtons.forEach(button => {
-      const dropdownMenu = button.nextElementSibling;
-      if (!button.contains(event.target)) {
-        dropdownMenu.classList.add('hidden');
-        const arrowIcons = button.querySelectorAll('.arrow-icon, .arrow-icon-90, .arrow-icon-180');
-        arrowIcons.forEach(arrow => {
-          switch (arrow) {
-            case arrow.classList.contains('arrow-icon'): {
-              arrow.style.transform = 'rotate(0deg)';
-              break;
-            }
-            case arrow.classList.contains('arrow-icon-90'): {
-              arrow.style.transform = 'rotate(90deg)';
-              break;
-            }
-            case arrow.classList.contains('arrow-icon-180'): {
-              arrow.style.transform = 'rotate(180deg)';
-              break;
-            }
-          }
-        });
+      // Поворот стрелки в зависимости от состояния меню
+      if (typeof arrowIcon !== 'undefined' && arrowIcon !== null) {
+        // arrowIcon существует
+        arrowIcon.style.transform = dropdownMenu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+      } else if (typeof arrowIcon_90 !== 'undefined' && arrowIcon_90 !== null) {
+        // arrowIcon_90 существует
+        arrowIcon_90.style.transform = dropdownMenu.classList.contains('hidden') ? 'rotate(90deg)' : 'rotate(270deg)';
+      }
+      else if (typeof arrowIcon_180 !== 'undefined' && arrowIcon_180 !== null) {
+        // arrowIcon_90 существует
+        arrowIcon_180.style.transform = dropdownMenu.classList.contains('hidden') ? 'rotate(180deg)' : 'rotate(270deg)';
       }
     });
-  }
+  });
+
+  // Закрытие меню при клике вне него
+  document.addEventListener('click', function (event) {
+    dropdownButtons.forEach(function (button) {
+      const dropdownMenu = button.nextElementSibling;
+
+      if (typeof arrowIcon !== 'undefined' && arrowIcon !== null) {
+        // arrowIcon существует
+        arrowIcon.style.transform = dropdownMenu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+      } else if (typeof arrowIcon_90 !== 'undefined' && arrowIcon_90 !== null) {
+        // arrowIcon_90 существует
+        arrowIcon_90.style.transform = dropdownMenu.classList.contains('hidden') ? 'rotate(90deg)' : 'rotate(180deg)';
+      }
+    });
+  });
 });
