@@ -4,7 +4,8 @@ module.exports = {
   "./index.pug",
   "./catalog.pug",
   "./src/**/**/*.{js,pug,html}",
-  "./public/**/*.js"
+  "./public/**/*.js",
+  "nouislider/dist/nouislider.css"
   ],
   theme: {
     extend: {

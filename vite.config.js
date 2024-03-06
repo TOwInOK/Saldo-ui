@@ -9,15 +9,20 @@ const locals = {};
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vitePugPlugin(option, locals)],
-  base: "./",
+  plugins: [
+    vitePugPlugin(option, locals)
+  ],
   build: {
     brotliSize: false,
-    minify: false,
+    minify: true,
     rollupOptions: {
       input: {
         main: "./index.html",
       },
     },
   },
+  esbuild: {
+    // Используйте синтаксис ES6 для JavaScript файлов
+    target: 'esnext'
+  }
 });
