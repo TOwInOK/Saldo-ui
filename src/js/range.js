@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     step: 1_000,
   });
 
+
   slider.noUiSlider.on('update', function (values, handle) {
     const value = values[handle];
     if (handle === 0) { // Handle for the lower thumb

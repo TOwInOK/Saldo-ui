@@ -20,6 +20,41 @@
     scrollbar-width: auto;
 }
 
+#priceRange {
+    height: 10px;
+}
+
+#priceRange .noUi-connect{
+    background: #3E5DA7;
+}
+#priceRange .noUi-base{
+    background: rgb(230, 237, 255);
+    height: 4px;
+    border: transparent;
+    border-radius: 20px;
+}
+
+#priceRange.noUi-target {
+    border: none !important;
+    background: none !important;
+    box-shadow: none !important;
+}
+#priceRange .noUi-handle {
+    height: 14px;
+    width: 14px;
+    top: -5px;
+    right: -4px; /* half the width */
+    border-radius: 9px;
+    box-shadow: none;
+    border-color: #3E5DA7;
+    background: #3E5DA7;
+}
+
+#priceRange .noUi-handle::before,
+#priceRange .noUi-handle::after {
+    display: none;
+}
+
 @layer base {
     html {
         font-family: "Circe", system-ui, sans-serif;

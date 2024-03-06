@@ -71,19 +71,19 @@ body
                         //Prices lines and choose line
                         div(class="grid gap-6 dropdown-menu")
                             //blocks of price min max
-                            ul(class="flex justify-between drop-shadow-md ")
+                            ul(class="flex justify-between")
                                 //min price
-                                li(class="flex gap-4 bg-white rounded-md text-saldo py-2 pl-4 items-center justify-start")
+                                li(class="flex gap-4 bg-white rounded-md text-saldo py-2 pl-4 items-center justify-start border border-saldo-100")
                                     span(for="priceFrom" class="text-sm text-nowrap") от:
                                     input(type="text" id="priceFrom" class="w-20")
                                 //max price
-                                li(class="flex gap-4 bg-white rounded-md text-saldo py-2 pl-4 items-center justify-start")
+                                li(class="flex gap-4 bg-white rounded-md text-saldo py-2 pl-4 items-center justify-start border border-saldo-100")
                                     span(for="priceTo" class="text-sm text-nowrap") до:
                                     input(type="text" id="priceTo" class="w-20")
                             //choose line
                             ul(class="flex justify-center")
                                 //Change svg to slider
-                                li(id="priceRange" class=" accent-saldo text-saldo bg-saldo-100 w-full h-28")
+                                li(id="priceRange" class="w-full ml-2" )
                     //Виджет производитель
                     div(class="flex flex-col gap-4")
                         //main span
