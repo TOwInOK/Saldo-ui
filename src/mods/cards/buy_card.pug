@@ -17,14 +17,14 @@ mixin buy_card_under_text()
 
 mixin money()
     div(class="justify-start items-start gap-4 xl:gap-4 inline-flex")
-        div(class="text-saldo text-[12px] vsm:text-lg md:text-xl font-bold leading-normal")
+        div(class="text-saldo text-sm vsm:text-lg md:text-xl font-bold leading-normal")
             |999 ₽
-        div(class="font-thin text-saldo-300 text-[12px] vsm:text-base leading-snug line-through")
+        div(class="font-thin text-saldo-300 text-sm vsm:text-base leading-snug line-through")
             |999 999 ₽
 
 mixin buy_card_image(enabler)
     div(class="")
-        img(src="helicopter.png", alt="helicopter", class=" h-32 w-36 vsm:h-44 vsm:w-36 xl:size-auto  xl:p-4 xl:object-scale-down xl:object-center  ")
+        img(src="helicopter.png", alt="helicopter", class=" h-32 w-28 vsm:h-44 vsm:w-36")
         if (enabler === true)
             div(class="absolute bottom-0 left-0  msv:-ml-2 md:ml-0 xl:ml-0 flex flex-col gap-2 ")
                 div(class="bg-red-400 rounded-md text-white font-medium text-[12px] vsm:text-sm px-2 py-0.5 xl:py-1 leading-tight text-center")
@@ -34,26 +34,27 @@ mixin buy_card_image(enabler)
         else
             div(class="")
 mixin buy_card_image_text(enabler, under_buttons)
-    div(class="inline-flex flex-col w-full space-y-6 p-2 md:p-3 xl:p-4 xl:space-y-6 items-center xl:items-stretch -mr-14 xl:-mr-0")
+    div(class="inline-grid grid-cols-1 items-center gap-4 w-full p-2 md:p-3 xl:p-4 -mr-14 xl:-mr-0 flexer-element")
         div(class="w-full inline-flex justify-around relative")
             +buy_card_image(enabler)
-        div(class="flex w-full flex-col items-start gap-2 whitespace-pre-wrap")
-            div(class="md:mb-8 xl:mb-8")
+        div(class="grid gap-2 w-full flex-col items-start whitespace-pre-wrap flexer-sub-element")
+            div(class="")
                 +buy_card_text()
                 +buy_card_under_text()
-            div(class="inline-flex items-start md:mb-2")
-                +money()
-            if (under_buttons === true)
-                div(class="flex items-center justify-between w-full")
-                    div(class="flex")
-                        +button_card()
-                    div(class="grid grid-cols-2 vsm:gap-4 xl:gap-4")
-                        +button_compare
-                        +button_heart
-            else
-                div(class="hidden md:flex items-center justify-between w-full")
-                    div(class="flex")
-                        +button_card()
-                    div(class="grid grid-cols-2 gap-2 vsm:gap-4 xl:gap-4")
-                        +button_compare
-                        +button_heart
+            div(class="grid gap-2")
+                div(class="inline-flex items-start")
+                    +money()
+                if (under_buttons === true)
+                    div(class="flex items-center justify-between w-full")
+                        div(class="flex")
+                            +button_card()
+                        div(class="grid grid-cols-2 vsm:gap-4 xl:gap-4")
+                            +button_compare
+                            +button_heart
+                else
+                    div(class="hidden md:flex items-center justify-between w-full")
+                        div(class="flex")
+                            +button_card()
+                        div(class="grid grid-cols-2 gap-2 vsm:gap-4 xl:gap-4")
+                            +button_compare
+                            +button_heart
