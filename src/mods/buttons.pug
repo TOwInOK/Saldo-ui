@@ -50,14 +50,15 @@ mixin submenu_categorie(text)
                         svg(width="30" height="30", viewBox="-5 0 30 30", xmlns="http://www.w3.org/2000/svg", class="size-10 -rotate-90")
                             path(d="M17.3438 20.625L11.7188 15L17.3438 9.375" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
 
-mixin checkbox(text)
+mixin checkbox(text, id)
+
     //checker box
     li(class="flex gap-2 items-center")
        //checkbox
-       input(type="checkbox" id="ch1" value="ch1"
+       input(type="checkbox" id=id
            class="appearance-none size-5 bg-white rounded-md peer")
        div(class='flex justify-center items-center size-5 absolute rounded-md pointer-events-none stroke-none peer-checked:stroke-saldo border-saldo border-2')
            svg(width='12' height='10' viewbox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg' class="")
                path(d='M11 1L4 9L1 5.8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
        //label
-       label(for="ch1" class="select-none") #{text}
+       label(for=id class="select-none") #{text}
