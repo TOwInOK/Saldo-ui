@@ -17,10 +17,10 @@ body
             //Выбор прдемета
             div(class="grid xl:flex gap-16 xl:gap-0")
                 //Левый список
-                div(id="filter_menu" class="modal hidden absolute top-0 grid gap-4 bg-saldo-white h-dvh z-10 p-4 w-full -ml-4 xl:p-0 xl:bg-transparent xl:ml-0 xl:static xl:flex xl:flex-col xl:gap-20 xl:w-2/4 xl:mr-8")
+                div(id="filter_menu" class="hidden absolute top-0 grid gap-4 bg-saldo-white h-dvh z-10 p-4 w-full -ml-4 xl:p-0 xl:bg-transparent xl:ml-0 xl:static xl:flex xl:flex-col xl:gap-20 xl:w-2/4 xl:mr-8")
                     //Mobile Header
                     div(class="flex justify-between mx-2 pb-4 items-center xl:hidden")
-                        div(onclick="toggleMobileFilter()" class="")
+                        div(class="")
                             button(class="stroke-saldo bg-transparent size-2.5 md:size-3.5 fill-none")
                                 svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 22" )
                                     path(d="M11 1L1 11L11 21" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
@@ -37,7 +37,7 @@ body
                         //Заголоко виджета
                         div(class="grid gap-4")
                             button(class="flex gap-4 items-center dropdown-button")
-                                svg(class="arrow-icon-180 size-4 mb-0.5" viewbox='0 0 10 16' fill='none' xmlns='http://www.w3.org/2000/svg')
+                                svg(class="arrow-icon size-4 mb-0.5" data-rotation="180,0" viewbox='0 0 10 16' fill='none' xmlns='http://www.w3.org/2000/svg')
                                     path(d='M8.375 1.25L1.625 8L8.375 14.75' stroke='#9EAED3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
                                 span
                                     | Главная категория
@@ -80,7 +80,7 @@ body
                             //Rub
                             span(class="text-saldo-600 font-bold text-xl") Цена, ₽
                             //arrow
-                            svg(viewbox='0 0 10 16' fill='none' xmlns='http://www.w3.org/2000/svg' class="size-4 -rotate-90 arrow-icon-90")
+                            svg(viewbox='0 0 10 16' fill='none' xmlns='http://www.w3.org/2000/svg' class="size-4 -rotate-90 arrow-icon" data-rotation="90,270")
                                 path(d='M8.375 1.25L1.625 8L8.375 14.75' stroke='#9EAED3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
                         //Prices lines and choose line
                         div(class="grid gap-6 dropdown-menu")
@@ -104,7 +104,7 @@ body
                         button(class="flex justify-between items-center dropdown-button" type="button")
                             span(class="text-saldo-600 font-bold text-xl") Производитель
                             //arrow
-                            svg(viewbox='0 0 10 16' fill='none' xmlns='http://www.w3.org/2000/svg' class="size-4 -rotate-90 arrow-icon-90")
+                            svg(viewbox='0 0 10 16' fill='none' xmlns='http://www.w3.org/2000/svg' class="size-4 -rotate-90 arrow-icon" data-rotation="90,270")
                                 path(d='M8.375 1.25L1.625 8L8.375 14.75' stroke='#9EAED3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
                         //block of column's checkers
                         div(class="dropdown-menu grid gap-4")
@@ -178,7 +178,7 @@ body
                                 //Кнопка для вызова меню
                                 button(class="flex text-saldo-600 text-sm xl:text-xl text-center stroke-saldo gap-3 items-center dropdown-button" type="button")
                                     span По популярности
-                                    svg(class="size-2.5 xl:size-3.5 arrow-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6")
+                                    svg(class="size-2.5 xl:size-3.5 arrow-icon" data-rotation="0,180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6")
                                         path(stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m1 1 4 4 4-4')
                                 div(class="hidden dropdown-menu flex grow")
                                     ul(class="flex justify-evenly grow text-sm text-saldo-300 items-center ")
@@ -201,7 +201,7 @@ body
                                 //Кнопка для вызова меню
                                 button(class="text-saldo-600 text-sm xl:text-xl text-center stroke-saldo flex gap-3 items-center dropdown-button" type="button")
                                     span По популярности
-                                    svg(class="size-2.5 xl:size-3.5 arrow-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6")
+                                    svg(class="size-2.5 xl:size-3.5 arrow-icon" data-rotation="0,180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6")
                                         path(stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m1 1 4 4 4-4')
                                 //Выпадающиее меню
                                 div(class="z-10 hidden py-2 bg-white rounded-lg drop-shadow-md w-full dropdown-menu absolute top-0 mt-8")

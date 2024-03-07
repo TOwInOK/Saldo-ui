@@ -22,8 +22,7 @@ mixin button_card
 
 mixin menu_categorie(text)
     li(class="w-full")
-    li(class="w-full")
-        button(class="flex rounded-md hover:bg-saldo-300 items-center justify-between w-full" onclick="toggleMobileSubMenu()")
+        button(class="flex rounded-md hover:bg-saldo-300 items-center justify-between w-full modal-dir" data-modal-id="mobileSubMenu")
             div(class="flex gap-2 items-center ml-2 p-2")
                 div(class="aspect-square bg-saldo size-6 mb-1")
                 span(class="text-saldo-600 text-lg")

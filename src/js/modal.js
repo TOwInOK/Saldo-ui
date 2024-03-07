@@ -1,69 +1,88 @@
+/*
+Установка атрибутов для кнопки показа
+button(class="modal-dir" data-modal-id="filter_menu")
+  class="modal-dir"
+  data-modal-id="id элемента с модальным окном"
+Установка атрибутов для модального окна
+  id="id окна"
+Установка атрибутов для кнопки закрытия
+div(class="modal-close cursor-pointer")
+  class="close-modal"
+*/
+
 document.addEventListener('DOMContentLoaded', function () {
-  // Объявляем переменную для хранения ссылки на последнюю нажатую кнопку
   let lastClickedButton = null;
 
-  // Получаем все элементы с классом 'modal-dir'
-  const modalDirs = document.querySelectorAll('.modal-dir');
+  // Создаем новый экземпляр Intersection Observer
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      // Если элемент видимый, добавляем обработчик события
+      if (entry.isIntersecting) {
+        const modalDir = entry.target;
+        setupModalDir(modalDir);
+        observer.unobserve(modalDir); // Прекращаем отслеживание после обработки
+      }
+    });
+  });
 
-  // Добавляем обработчик события клика для каждого элемента 'modal-dir'
-  modalDirs.forEach(function (modalDir) {
-    modalDir.addEventListener('click', async function () {
-      // Получаем уникальный идентификатор модального окна из атрибута data-modal-id
+  // Получаем все элементы с классом 'modal-dir' и начинаем отслеживание
+  const modalDirs = document.querySelectorAll('.modal-dir');
+  modalDirs.forEach(modalDir => {
+    observer.observe(modalDir);
+  });
+
+  // Общая функция для настройки каждого 'modal-dir'
+  function setupModalDir(modalDir) {
+    modalDir.addEventListener('click', function () {
       const modalId = modalDir.getAttribute('data-modal-id');
       const modal = document.getElementById(modalId);
 
-      // Сохраняем ссылку на последнюю нажатую кнопку
       lastClickedButton = modalDir;
-
-      // Отображаем модальное окно, убирая у него класс 'hidden'
-      modal.classList.remove('hidden');
-
-      // Закрываем доступ к основной странице
       document.body.style.overflow = 'hidden';
 
-      // Фокусируемся на модальном окне
+      modal.classList.remove('hidden');
       modal.focus();
+      smoothScroll(modal);
 
-      // Прокручиваем к модальному окну с использованием Promise
-      await smoothScroll(modal);
+      const modalCloses = modal.querySelectorAll('.modal-close');
+      modalCloses.forEach(function (modalClose) {
+        modalClose.addEventListener('click', function () {
+          if (lastClickedButton) {
+            smoothScroll(lastClickedButton);
+          }
 
-      // Добавляем обработчик события клика для кнопки закрытия внутри модального окна
-      const modalClose = modal.querySelector('.modal-close');
-      modalClose.addEventListener('click', async function () {
-        // Прокручиваем к последней нажатой кнопке с использованием Promise
-        if (lastClickedButton) {
-          await smoothScroll(lastClickedButton);
-        }
-        // Добавляем задержку перед скрытием модального окна
-        setTimeout(() => {
-          // Закрываем модальное окно, добавляя ему класс 'hidden'
-          modal.classList.add('hidden');
-
-          // Восстанавливаем доступ к основной странице
-          document.body.style.overflow = 'auto';
-        }, 500); // Задержка в миллисекундах (в данном случае 500 мс)
+          setTimeout(() => {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+          }, 100);
+        });
       });
+
+      const modalCloseAll = modal.querySelector('.modal-close-all');
+      if (modalCloseAll) {
+        modalCloseAll.addEventListener('click', function () {
+          setTimeout(() => {
+            modalDirs.forEach(function (dir) {
+              const currentModalId = dir.getAttribute('data-modal-id');
+              const currentModal = document.getElementById(currentModalId);
+              if (currentModal) {
+                currentModal.classList.add('hidden');
+              }
+            });
+            document.body.style.overflow = 'auto';
+          }, 100);
+        });
+      }
     });
-  });
+  }
+
+  // Функция для прокрутки к элементу
+  function smoothScroll(element) {
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+      inline: 'center'
+    });
+  }
 });
 
-  // Функция для плавной прокрутки с использованием Promise
-  function smoothScroll(element) {
-    return new Promise(resolve => {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center',
-        inline: 'center'
-      });
-
-      // Добавляем обработчик события окончания прокрутки
-      const onScroll = () => {
-        // Удаляем обработчик события
-        window.removeEventListener('scroll', onScroll);
-        // Разрешаем Promise после завершения прокрутки
-        resolve();
-      };
-      window.addEventListener('scroll', onScroll);
-    }
-  );
-}

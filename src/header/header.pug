@@ -5,13 +5,13 @@ include ../mod
 
 //- lg header
 header(
-    class="xl:px-16 bg-saldo text-white")
+    class="xl:px-16 bg-saldo text-white z-20")
     nav(
         class="hidden xl:flex items-center justify-between h-14 gap-5 max-w-[1440px] 2xl:mx-auto shrink-0")
         ul(
             class="inline-flex items-center gap-x-4 *no-underline hover:*:underline")
             each el in menu
-                li(href='./scr/footer.pug') #{el}
+                a(href='./scr/footer.pug') #{el}
 
         ul(class="inline-flex items-center gap-4 *no-underline hover:*:underline")
             li
@@ -34,23 +34,13 @@ header(
     class="xl:hidden bg-saldo text-white shrink-0")
     nav(
         class="flex items-center py-2 xl:py-4 justify-evenly md:-ml-8")
-            div(onclick="toggleMobileMenu()")
+            div(class="modal-dir" data-modal-id="mobileMenu")
                 +hamburger("white")
             div(class="min-w-2.5 mb-1")
                 +logo_mobile_header()
             +mobile_addition_buttons()
 
-    div(class="hidden inline-flex h-dvh absolute z-10 w-full top-0 bg-white" id="mobile-dropdown-menu")
+    div(class="hidden inline-flex h-dvh absolute z-10 w-full top-0 bg-white" id="mobileMenu")
         +menu()
-    div(class="hidden inline-flex h-dvh absolute z-20 w-full top-0 bg-white" id="mobile-dropdown-submenu")
+    div(class="hidden inline-flex h-dvh absolute z-20 w-full top-0 bg-white" id="mobileSubMenu")
         +submenu()
-
-    script.
-        toggleMobileMenu = () => {
-            document.getElementById("mobile-dropdown-menu").classList.toggle("hidden")
-        }
-
-    script.
-      toggleMobileSubMenu = () => {
-        document.getElementById("mobile-dropdown-submenu").classList.toggle("hidden")
-      }
