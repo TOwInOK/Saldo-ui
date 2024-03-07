@@ -36,6 +36,12 @@ document.addEventListener('DOMContentLoaded', function () {
     modalDir.addEventListener('click', function () {
       const modalId = modalDir.getAttribute('data-modal-id');
       const modal = document.getElementById(modalId);
+      const eclipseAttribute = modalDir.getAttribute('eclipse');
+      const shouldApplyEclipse = eclipseAttribute !== null && eclipseAttribute.toLowerCase() === 'true';
+
+      if (shouldApplyEclipse) {
+        toggleEclipse();
+      }
 
       lastClickedButton = modalDir;
       document.body.style.overflow = 'hidden';
@@ -47,10 +53,12 @@ document.addEventListener('DOMContentLoaded', function () {
       const modalCloses = modal.querySelectorAll('.modal-close');
       modalCloses.forEach(function (modalClose) {
         modalClose.addEventListener('click', function () {
+          if (shouldApplyEclipse) {
+            toggleEclipse();
+          }
           if (lastClickedButton) {
             smoothScroll(lastClickedButton);
           }
-
           setTimeout(() => {
             modal.classList.add('hidden');
             document.body.style.overflow = 'auto';
@@ -83,6 +91,25 @@ document.addEventListener('DOMContentLoaded', function () {
       block: 'center',
       inline: 'center'
     });
+  }
+
+  function toggleEclipse() {
+    const overlay = document.querySelector('.eclipse-overlay');
+    const bodyOverflow = document.body.style.overflow;
+
+    if (!overlay && bodyOverflow !== 'hidden') {
+      // Создание нового затемненного фона
+      const newOverlay = document.createElement('div');
+      newOverlay.className = 'eclipse-overlay';
+      document.body.appendChild(newOverlay);
+
+      // Запрет прокрутки страницы
+      document.body.style.overflow = 'hidden';
+    } else if (overlay && bodyOverflow === 'hidden') {
+      // Удаление затемненного фона
+      document.body.removeChild(overlay);
+      document.body.style.overflow = 'hidden';
+    }
   }
 });
 

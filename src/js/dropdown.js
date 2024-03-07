@@ -46,8 +46,17 @@ document.addEventListener('DOMContentLoaded', function () {
     // Использование Intersection Observer для определения видимости кнопки
     observer.observe(button);
 
+
+
     // Обработчик события клика по кнопке
     button.addEventListener('click', function () {
+      // Затемнение фона вокруг кнопки и блокировка прокрутки страницы
+      const eclipseAttribute = button.getAttribute('eclipse');
+      const shouldApplyEclipse = eclipseAttribute !== null && eclipseAttribute.toLowerCase() === 'true';
+
+      if (shouldApplyEclipse) {
+        toggleEclipse(button);
+      }
       // Переключаем видимость меню
       dropdownMenu.classList.toggle('hidden');
 
@@ -84,5 +93,24 @@ document.addEventListener('DOMContentLoaded', function () {
         });
       }
     });
+  }
+
+  // Применение/удаление затемнения фона и блокировки прокрутки
+  function toggleEclipse() {
+    const overlay = document.querySelector('.eclipse-overlay');
+    const bodyOverflow = document.body.style.overflow;
+
+    if (!overlay && bodyOverflow !== 'hidden') {
+      // Создание нового затемненного фона
+      const newOverlay = document.createElement('div');
+      newOverlay.className = 'eclipse-overlay';
+      document.body.appendChild(newOverlay);
+      // Запрет прокрутки страницы
+      document.body.style.overflow = 'hidden';
+    } else if (overlay && bodyOverflow === 'hidden') {
+      // Удаление затемненного фона
+      document.body.removeChild(overlay);
+      document.body.style.overflow = 'auto';
+    }
   }
 });
