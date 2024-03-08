@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "nouislider": "^15.7.1",
+    "swiper": "^11.0.7",
     "vite-plugin-pug-transformer": "^1.0.5"
   }
 }

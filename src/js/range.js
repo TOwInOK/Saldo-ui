@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return Number(value.replace(',-', ''));
       }
     },
-    step: 1_000,
+    step: 100,
   });
 
 

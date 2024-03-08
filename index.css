@@ -136,3 +136,27 @@
         top: 0px;
     }
 }
+
+.swiper {
+    width: 100%;
+    height: 400px;
+}
+/* Скрыть .swiper.first-block на экранах шириной меньше 1440px */
+@media (max-width: 1279px) {
+    .swiper.first-block {
+        display: none; /* скрываем блок */
+    }
+}
+
+/* Показать .swiper.second-block на экранах шириной меньше 1440px */
+@media (max-width: 1439px) {
+    .swiper.second-block {
+        display: block; /* показываем блок */
+    }
+}
+@media (max-width: 426px) {
+    .swiper.second-block {
+        display: block; /* показываем блок */
+        height: 200px;
+    }
+}
