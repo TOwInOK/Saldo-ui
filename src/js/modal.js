@@ -36,6 +36,10 @@ document.addEventListener('DOMContentLoaded', function () {
     modalDir.addEventListener('click', function () {
       const modalId = modalDir.getAttribute('data-modal-id');
       const modal = document.getElementById(modalId);
+      if (modal === null) {
+        console.error('Не был найдено модальное окно с ID: ' + modalId + '\n' + 'Modal: ' + modal)
+        return;
+      }
       const eclipseAttribute = modalDir.getAttribute('eclipse');
       const shouldApplyEclipse = eclipseAttribute !== null && eclipseAttribute.toLowerCase() === 'true';
 

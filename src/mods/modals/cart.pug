@@ -1,0 +1,89 @@
+mixin cart
+    //Mobile Header
+    div(class="flex justify-between mx-2 items-center md:justify-end md:col-start-4 xl:block")
+        div(class="md:hidden")
+            button(class="stroke-saldo bg-transparent size-2.5 md:size-3.5 fill-none")
+                svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 22" )
+                    path(d="M11 1L1 11L11 21" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+        div(class="md:hidden text-saldo-600 font-bold text-md")
+            | Фильтры
+        div(class="modal-close cursor-pointer")
+            button(class="stroke-saldo bg-transparent size-4 md:size-6")
+                svg(xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" class="")
+                    path(d="M18.8893 18.8889L1.11155 1.11111" stroke="#3E5DA7" stroke-width="2" stroke-linecap="round")
+                    path(d="M18.8885 1.11111L1.11068 18.8889" stroke="#3E5DA7" stroke-width="2" stroke-linecap="round")
+    //Карточки товаров
+    div(class="flex gap-4 justify-center pt-6")
+        div(class="p-2")
+            img(src="helicopter.png" class="h-28 w-44 vsm:w-36")
+        div(class="grid")
+            span(class="text-sm font-normal text-saldo-600 text-balance") Ударный гайковерт Ryobi ONE+ R18IW3-0 5133002436
+            span(class="text-base font-bold text-saldo leading-tight") 258 000 ₽
+            div(class="flex w-3/5 md:w-1/3 items-center justify-evenly rounded-lg border border-saldo text-saldo")
+                button(class="font-bold") -
+                span(class="text-saldo-600") 100
+                button(class="font-bold") +
+    //Способ получения
+    fieldset(class="flex flex-col gap-1 justify-center pt-6")
+        label(class="text-xl font-bold") Выбор способа получения
+        div(class="flex gap-4")
+            div(class="flex gap-2 items-center")
+                //checkbox
+                input(type="checkbox" id="c1"
+                    class="appearance-none size-5 bg-white rounded-md peer")
+                div(class='flex justify-center items-center size-5 absolute rounded-md pointer-events-none stroke-none peer-checked:stroke-saldo border-saldo border-2')
+                    svg(width='12' height='10' viewbox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg' class="")
+                        path(d='M11 1L4 9L1 5.8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+                //label
+                label(for="c1" class="select-none") Самовывоз
+            div(class="flex gap-2 items-center")
+                //checkbox
+                input(type="checkbox" id="c2"
+                    class="appearance-none size-5 bg-white rounded-md peer")
+                div(class='flex justify-center items-center size-5 absolute rounded-md pointer-events-none stroke-none peer-checked:stroke-saldo border-saldo border-2')
+                    svg(width='12' height='10' viewbox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg' class="")
+                        path(d='M11 1L4 9L1 5.8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+                //label
+                label(for="c2" class="select-none") Доставка
+    //Способ оплаты
+    div(class="grid items-center gap-1 pt-6")
+        h1(class="text-xl font-bold") Выбор способа оплаты
+        div(class="flex gap-4")
+            +checkbox("Картой", "сa1")
+            +checkbox("Наличными", "сa2")
+        +checkbox("Картой при получении", "сa3")
+    //Карта
+    div(class="grid gap-2 pt-6")
+        div
+            h1(class="text-xl font-bold text-pretty")
+                | Самовывоз из магазина.
+                br
+                | Контакты магазина и карта
+            span(class="flex gap-2 items-center")
+                svg(width='24' height='24' viewbox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                    path(d='M12 2.25C8.27344 2.25 5.25 5.12766 5.25 8.67188C5.25 12.75 9.75 19.2127 11.4023 21.4448C11.4709 21.5391 11.5608 21.6157 11.6647 21.6686C11.7686 21.7215 11.8835 21.749 12 21.749C12.1165 21.749 12.2314 21.7215 12.3353 21.6686C12.4392 21.6157 12.5291 21.5391 12.5977 21.4448C14.25 19.2136 18.75 12.7533 18.75 8.67188C18.75 5.12766 15.7266 2.25 12 2.25Z' stroke='#3E5DA7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+                    path(d='M12 11.25C13.2426 11.25 14.25 10.2426 14.25 9C14.25 7.75736 13.2426 6.75 12 6.75C10.7574 6.75 9.75 7.75736 9.75 9C9.75 10.2426 10.7574 11.25 12 11.25Z' stroke='#3E5DA7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+                span г. Нижняя Салда
+        div(class="flex flex-col md:flex-row bg-saldo-100 rounded-2xl space-y-3 md:space-y-0 my-4 xl:my-12")
+            div(class="grid gap-2 md:space-y-3 md:w-3/5 md:p-10 p-4  items-center md:items-start")
+               span г. Нижняя Салда ул. Ломоносова 10
+               span(class="text-saldo") Забирайте сегодня
+               span пн. - вс.. : с 10:00 до 22:00
+            iframe(src='https://yandex.ru/map-widget/v1/?ll=60.695552%2C58.074969&mode=search&oid=123486134645&ol=biz&utm_campaign=desktop&utm_medium=search&utm_source=maps&z=17.12' frameborder="0" allowfullscreen="true" class="rounded-xl md:w-3/5 w-full h-[304px]")
+
+    //Доп корень
+    div(class="grid gap-4 pt-6")
+        //Форма с данными покупателя
+        div(class="grid gap-4")
+            h1(class="text-xl font-bold text-pretty")
+                | Данные покупателя
+            form(class="grid grid-cols-2 gap-2")
+                input(class="rounded-lg border border-saldo-300 h-10 placeholder:text-saldo-300 pl-4" placeholder="Имя*" type="login" name="name")
+                input(class="rounded-lg border border-saldo-300 h-10 placeholder:text-saldo-300 pl-4" placeholder="Email*" type="mail" name="email")
+                input(class="col-span-2 rounded-lg border border-saldo-300 h-10 placeholder:text-saldo-300 pl-4" placeholder="Номер телефона*" type="phone" name="phone")
+                input(class="col-span-2 rounded-lg border border-saldo-300 h-32 placeholder:text-saldo-300 pl-4" placeholder="Комментарий" type="text" name="comment")
+        //Оферта
+        div(class="flex items-center justify-center text-sm text-center leading-none font-normal text-saldo-300")
+            |Нажимая кнопку «Отправить заказ», я соглашаюсь на получение информации от интернет-магазина и уведомлений о состоянии моих заказов, а также принимаю условия политики конфиденциальности и пользовательского соглашения.
+        //Кнопка оформления заказа
+        button(class="flex justify-center items-center text-saldo-white bg-saldo rounded-xl p-2.5 mb-4") Оформить заказ
