@@ -4,7 +4,7 @@ body
     div(class="flex flex-col m-4 gap-8 xl:mx-16 max-w-[1440px] 2xl:mx-auto h-full")
         include src/header/header_main
         div(class="hidden absolute bg-black opacity-80 size-full z-10" id="eclipse")
-        div(id="cart" class="z-30 hidden absolute grid grid-cols-1 gap-10 divide-y divide-saldo-300 h-dvh w-full md:w-36 bg-saldo-50 inset-0 pt-6 px-4 overflow-y-scroll")
+        div(id="cart" class="z-30 hidden absolute grid xl:hidden md:hidden grid-cols-1 gap-10 divide-y divide-saldo-300 h-dvh w-full md:w-36 bg-saldo-50 inset-0 pt-6 px-4 overflow-y-scroll")
            +cart()
         include src/main/banners
         include src/main/sections/cards_section
