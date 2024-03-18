@@ -1,0 +1,48 @@
+mixin order_card()
+    div(class="grid bg-white rounded-lg p-4 gap-4")
+        div
+            img(src="cut.png")
+        div(class="grid gap-2")
+            span(class="font-bold text-xl") Изготовление москитных сеток
+            span(class="text-base") Цены уточнять у менеджера
+        div(class="grid gap-2 items-center")
+            div(class="flex gap-4 ")
+                span(class="text-saldo")
+                    +phone("9097054703")
+                span(class="text-saldo")
+                    +email("oknaveka-ns@mail.ru")
+            div(class="flex gap-4 items-center")
+                span(class="text-saldo")
+                    +telegram()
+                span(class="text-saldo")
+                    +whatsapp()
+                button(class="items-center p-1 w-full max-w-[140px] text-saldo-white bg-saldo text-base rounded-xl") Заказать
+
+mixin jobs_card()
+    div(class="grid bg-white rounded-lg p-4 gap-4")
+        div
+            img(src="cut.png")
+        div(class="grid gap-2")
+            span(class="font-bold text-xl") Название вакансии
+            div(class="flex text-saldo font-bold text-base gap-2")
+                span Полная занятость
+                span Доход от 60 000 ₽
+        div(class="grid gap-4")
+            span(class="text-base")
+                span(class="font-bold") Описание вакансии:
+                span  описание вакансии описание вакансии описание вакансии описание вакансии описание вакансии описание вакансии
+            span(class="text-base")
+                span(class="font-bold") Условия вакансии:
+                span  условия вакансии условия вакансии условия вакансии условия вакансии
+        div(class="grid gap-2 items-center")
+            div(class="flex gap-4 ")
+                span(class="text-saldo")
+                    +phone("9097054703")
+                span(class="text-saldo")
+                    +email("oknaveka-ns@mail.ru")
+            div(class="flex gap-4 items-center")
+                span(class="text-saldo")
+                    +telegram()
+                span(class="text-saldo")
+                    +whatsapp()
+                button(class="items-center p-1 w-full max-w-[140px] text-saldo-white bg-saldo text-base rounded-xl") Заказать

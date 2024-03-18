@@ -1,0 +1,81 @@
+include src/mod.pug
+
+div(class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4")
+    div(class="grid gap-4")
+        //Info1
+        div(class="bg-white rounded-xl p-4 grid gap-2 text-saldo-600 shadow-md")
+            span(class="font-bold text-xl") Контактная информация
+            span г. Нижняя Салда ул. Ломоносова 10
+            span +7 (909) 705-47-03
+            span oknaveka-ns@mail.ru
+            div(class="flex gap-4 text-saldo")
+                +big_telegram("salda-stroy")
+                +big_whatsapp("9097054703")
+        //Info2
+        div(class="bg-white rounded-xl p-4 grid gap-2 text-saldo-600 shadow-md")
+            span(class="font-bold text-xl") Реквизиты
+            span ИП Протченко С.В.
+            span
+            | 624740, Свердловская область,
+            br
+            | г. Нижняя Салда ул. Ломоносова 10
+            span ИНН 662200017218
+    //Map
+    div(class="xl:col-span-2")
+        iframe(src='https://yandex.ru/map-widget/v1/?ll=60.695552%2C58.074969&mode=search&oid=123486134645&ol=biz&utm_campaign=desktop&utm_medium=search&utm_source=maps&z=17.12' allowfullscreen="true" class="rounded-xl w-full h-full min-h-[304px]")
+
+div(class="grid xl:grid-cols-2 gap-4 text-sm md:text-base")
+    div(class="grid justify-start items-start gap-6 text-saldo-600 rounded-xl p-8 shadow-md")
+        span(class="text-3xl font-bold leading-9")
+            |Карточка предпринимателя
+        span
+            | Индивидуальный предприниматель Протченко Сергей Владимирович
+            br
+            | ИП Протченко С.В.
+            br
+            | Юридический адрес: 624740 Свердловская область, г. Нижняя Салда ул. Ломоносова 10
+            br
+            | ИНН 662200017218
+            br
+            | Банк получатель Уральский банк ПАО « Сбербанк России»
+            br
+            | БИК Банка получателя 046577674
+            br
+            | Кор. Счет 30101810500000000674
+            br
+            | Рас. счет 40802810316540003844
+            br
+            | Электронная почта oknaveka-ns@mail.ru
+            br
+            | Сот. 89097054703- Сергей Владимирович
+            br
+            | ОГРНИП 304660736600090
+            br
+            | ОКПО 0125540191
+            br
+            | ОКАТО 65477000000- Свердловская область Нижняя Салда
+            br
+            | ОКТМО 65750000 – Муниципальные образования Свердловской области Нижняя Салда
+            br
+            | ОКОГУ 49015 – индивидуальный предприниматель
+            br
+            | ОКФС 16 – частная собственность
+            br
+            | ОКОПФ 91 – индивидуальный предприниматель
+            br
+            | ОКВЭД 52.46.73- розничная торговля металлическими и неметаллическими конструкциями т.п.
+            br
+    div(class="grid gap-4 pt-6 rounded-xl p-4 shadow-md bg-saldo-100 items-center")
+        //Форма с данными покупателя
+        div(class="grid gap-4 h-full items-center")
+            h1(class="flex text-2xl md:text-3xl font-bold text-pretty justify-center")
+                | Получить консультацию
+            form(class="grid gap-2")
+                input(class="rounded-lg border border-saldo-300 h-10 placeholder:text-saldo-300 pl-4" placeholder="Email*" type="mail" name="email")
+                input(class="rounded-lg border border-saldo-300 h-10 placeholder:text-saldo-300 pl-4" placeholder="Номер телефона*" type="phone" name="phone")
+                input(class="rounded-lg border border-saldo-300 h-32 placeholder:text-saldo-300 pl-4" placeholder="Комментарий" type="text" name="comment")
+        //Кнопка оформления заказа
+        button(class="flex justify-center items-center text-saldo-white bg-saldo rounded-xl p-2.5 max-h-14") Оформить заявку
+        //Оферта
+        div(class="flex items-center justify-center text-sm text-center leading-none font-normal text-saldo-300 mb-4")
+            | Нажимая кнопку «Отправить заказ», я соглашаюсь на получение информации от интернет-магазина и уведомлений о состоянии моих заказов, а также принимаю условия политики конфиденциальности и пользовательского соглашения.

@@ -17,7 +17,9 @@ export default defineConfig({
     minify: true,
     rollupOptions: {
       input: {
-        main: "./index.html",
+        index: "./index.html",
+        catalog: "./catalog.html",
+        jobs: "./jobs.html",
       },
     },
   },
